@@ -12,12 +12,13 @@ using System.Windows.Forms;
 
 namespace Projeto_final
 {
-    public partial class formLogin : UserControl
+    public partial class Form2 : Form
     {
-        public formLogin()
+        public Form2()
         {
             InitializeComponent();
         }
+
         private void imputNome_TextChanged(object sender, EventArgs e)
         {
 
@@ -35,7 +36,7 @@ namespace Projeto_final
 
             using (var conexao = Conexao.ObterConexao())
             {
-                string query = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = @usuario AND senha = @senha";
+                string query = "SELECT COUNT(*) FROM admin WHERE usuario = @usuario AND senha = @senha";
 
                 using (var cmd = new MySqlCommand(query, conexao))
                 {
@@ -57,11 +58,7 @@ namespace Projeto_final
                     }
                 }
             }
-        }
-
-        private void formLogin_Load(object sender, EventArgs e)
-        {
-
-        }
+        
+    }
     }
 }

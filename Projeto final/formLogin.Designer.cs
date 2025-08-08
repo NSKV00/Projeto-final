@@ -28,26 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             txtlogin = new Label();
             imputNome = new TextBox();
             imputSenha = new TextBox();
             label1 = new Label();
             label2 = new Label();
             btnLogin = new Button();
-            errorProvider1 = new ErrorProvider(components);
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // txtlogin
             // 
-            txtlogin.AutoSize = true;
-            txtlogin.Location = new Point(352, 34);
+            txtlogin.Location = new Point(0, 0);
             txtlogin.Name = "txtlogin";
-            txtlogin.Size = new Size(52, 25);
-            txtlogin.TabIndex = 0;
-            txtlogin.Text = "login";
-            txtlogin.Click += label1_Click;
+            txtlogin.Size = new Size(100, 23);
+            txtlogin.TabIndex = 6;
             // 
             // imputNome
             // 
@@ -55,6 +49,7 @@
             imputNome.Name = "imputNome";
             imputNome.Size = new Size(354, 31);
             imputNome.TabIndex = 1;
+            imputNome.TextChanged += imputNome_TextChanged;
             // 
             // imputSenha
             // 
@@ -62,24 +57,28 @@
             imputSenha.Name = "imputSenha";
             imputSenha.Size = new Size(354, 31);
             imputSenha.TabIndex = 2;
+            imputSenha.UseSystemPasswordChar = true;
+            imputSenha.TextChanged += imputSenha_TextChanged;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(180, 157);
-            label1.Name = "label1";
-            label1.Size = new Size(58, 25);
-            label1.TabIndex = 3;
-            label1.Text = "nome";
+            //label1.AutoSize = true;
+            //label1.Location = new Point(180, 157);
+            //label1.Name = "label1";
+            //label1.Size = new Size(58, 25);
+            //label1.TabIndex = 3;
+            //label1.Text = "nome";
+            //label1.Click += this.label1_Click;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(180, 258);
-            label2.Name = "label2";
-            label2.Size = new Size(58, 25);
-            label2.TabIndex = 4;
-            label2.Text = "senha";
+            //label2.AutoSize = true;
+            //label2.Location = new Point(180, 258);
+            //label2.Name = "label2";
+            //label2.Size = new Size(58, 25);
+            //label2.TabIndex = 4;
+            //label2.Text = "senha";
+            //label2.Click += this.label2_Click;
             // 
             // btnLogin
             // 
@@ -89,10 +88,7 @@
             btnLogin.TabIndex = 5;
             btnLogin.Text = "login";
             btnLogin.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            errorProvider1.ContainerControl = this;
+            btnLogin.Click += btnLogin_Click;
             // 
             // formLogin
             // 
@@ -108,7 +104,7 @@
             Controls.Add(txtlogin);
             Name = "formLogin";
             Size = new Size(817, 565);
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            Load += formLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,6 +117,5 @@
         private Label label1;
         private Label label2;
         private Button btnLogin;
-        private ErrorProvider errorProvider1;
     }
 }
