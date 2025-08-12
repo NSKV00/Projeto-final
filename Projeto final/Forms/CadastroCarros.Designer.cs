@@ -123,8 +123,8 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.BackColor = Color.Turquoise;
-            btnSalvar.Location = new Point(667, 377);
+            btnSalvar.BackColor = Color.DarkGray;
+            btnSalvar.Location = new Point(1216, 448);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(112, 39);
             btnSalvar.TabIndex = 10;
@@ -136,7 +136,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(906, 471);
+            ClientSize = new Size(1367, 499);
             Controls.Add(btnSalvar);
             Controls.Add(Textanodefab);
             Controls.Add(label5);
