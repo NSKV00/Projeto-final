@@ -1,4 +1,5 @@
-﻿namespace Projeto_final
+﻿//ola
+namespace Projeto_final
 {
     partial class Form2
     {
