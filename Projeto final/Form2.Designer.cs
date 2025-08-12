@@ -49,7 +49,7 @@ namespace Projeto_final
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(251, 157);
+            label2.Location = new Point(251, 196);
             label2.Name = "label2";
             label2.Size = new Size(58, 25);
             label2.TabIndex = 9;
@@ -58,7 +58,7 @@ namespace Projeto_final
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(251, 56);
+            label1.Location = new Point(251, 83);
             label1.Name = "label1";
             label1.Size = new Size(58, 25);
             label1.TabIndex = 8;
@@ -66,7 +66,7 @@ namespace Projeto_final
             // 
             // imputSenha
             // 
-            imputSenha.Location = new Point(223, 185);
+            imputSenha.Location = new Point(223, 224);
             imputSenha.Name = "imputSenha";
             imputSenha.Size = new Size(354, 31);
             imputSenha.TabIndex = 7;
@@ -75,7 +75,7 @@ namespace Projeto_final
             // 
             // imputNome
             // 
-            imputNome.Location = new Point(223, 84);
+            imputNome.Location = new Point(223, 123);
             imputNome.Name = "imputNome";
             imputNome.Size = new Size(354, 31);
             imputNome.TabIndex = 6;
