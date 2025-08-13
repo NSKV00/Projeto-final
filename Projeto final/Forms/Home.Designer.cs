@@ -1,6 +1,6 @@
 ﻿namespace Projeto_final
 {
-    partial class MenuLateral
+    partial class Home
     {
         /// <summary>
         ///  Required designer variable.
@@ -193,6 +193,7 @@
             Controls.Add(panel1);
             Name = "MenuLateral";
             Text = "Form1";
+            Load += MenuLateral_Load;
             panel1.ResumeLayout(false);
             painelLogo.ResumeLayout(false);
             painelLogo.PerformLayout();

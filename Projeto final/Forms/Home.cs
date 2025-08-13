@@ -1,8 +1,8 @@
 namespace Projeto_final
 {
-    public partial class MenuLateral : Form
+    public partial class Home : Form
     {
-        public MenuLateral()
+        public Home()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace Projeto_final
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuLateral_Load(object sender, EventArgs e)
         {
 
         }
