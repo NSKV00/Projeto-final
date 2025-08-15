@@ -87,6 +87,7 @@
             btnFuncionarios.TabIndex = 4;
             btnFuncionarios.Text = "Funcionários";
             btnFuncionarios.UseVisualStyleBackColor = true;
+            btnFuncionarios.Click += btnFuncionarios_Click;
             // 
             // btnOS
             // 
@@ -111,7 +112,7 @@
             btnVeiculos.Padding = new Padding(12, 0, 0, 0);
             btnVeiculos.Size = new Size(220, 50);
             btnVeiculos.TabIndex = 2;
-            btnVeiculos.Text = "Cadastro Veículo";
+            btnVeiculos.Text = "Veículos";
             btnVeiculos.UseVisualStyleBackColor = true;
             btnVeiculos.Click += Veiculos_Click;
             // 
@@ -125,8 +126,9 @@
             btnCliente.Padding = new Padding(12, 0, 0, 0);
             btnCliente.Size = new Size(220, 50);
             btnCliente.TabIndex = 1;
-            btnCliente.Text = "Cadatro Cliente";
+            btnCliente.Text = "Clientes";
             btnCliente.UseVisualStyleBackColor = true;
+            btnCliente.Click += btnCliente_Click;
             // 
             // painelLogo
             // 
@@ -142,7 +144,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(61, 32);
+            label2.Location = new Point(68, 32);
             label2.Name = "label2";
             label2.Size = new Size(87, 25);
             label2.TabIndex = 0;
@@ -169,11 +171,12 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F);
-            label1.Location = new Point(392, 32);
+            label1.Location = new Point(393, 32);
             label1.Name = "label1";
             label1.Size = new Size(65, 28);
             label1.TabIndex = 0;
             label1.Text = "Home";
+            label1.Click += label1_Click;
             // 
             // panelDesktop
             // 
@@ -183,7 +186,7 @@
             panelDesktop.Size = new Size(849, 484);
             panelDesktop.TabIndex = 2;
             // 
-            // MenuLateral
+            // Home
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -191,7 +194,7 @@
             Controls.Add(panelDesktop);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Name = "MenuLateral";
+            Name = "Home";
             Text = "Form1";
             Load += MenuLateral_Load;
             panel1.ResumeLayout(false);
