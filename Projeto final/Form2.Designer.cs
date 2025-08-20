@@ -29,16 +29,21 @@ namespace Projeto_final
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnLogin = new Button();
             label2 = new Label();
             label1 = new Label();
             imputSenha = new TextBox();
             imputNome = new TextBox();
+            guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(395, 360);
+            btnLogin.Anchor = AnchorStyles.None;
+            btnLogin.Location = new Point(358, 302);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(112, 34);
             btnLogin.TabIndex = 10;
@@ -48,8 +53,9 @@ namespace Projeto_final
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(251, 196);
+            label2.Location = new Point(257, 187);
             label2.Name = "label2";
             label2.Size = new Size(58, 25);
             label2.TabIndex = 9;
@@ -57,8 +63,9 @@ namespace Projeto_final
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(251, 83);
+            label1.Location = new Point(272, 104);
             label1.Name = "label1";
             label1.Size = new Size(58, 25);
             label1.TabIndex = 8;
@@ -66,7 +73,8 @@ namespace Projeto_final
             // 
             // imputSenha
             // 
-            imputSenha.Location = new Point(223, 224);
+            imputSenha.Anchor = AnchorStyles.None;
+            imputSenha.Location = new Point(233, 236);
             imputSenha.Name = "imputSenha";
             imputSenha.Size = new Size(354, 31);
             imputSenha.TabIndex = 7;
@@ -75,26 +83,39 @@ namespace Projeto_final
             // 
             // imputNome
             // 
-            imputNome.Location = new Point(223, 123);
+            imputNome.Anchor = AnchorStyles.None;
+            imputNome.Location = new Point(233, 132);
             imputNome.Name = "imputNome";
             imputNome.Size = new Size(354, 31);
             imputNome.TabIndex = 6;
             imputNome.TextChanged += imputNome_TextChanged;
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = SystemColors.HighlightText;
+            panel1.Controls.Add(imputNome);
+            panel1.Controls.Add(imputSenha);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(btnLogin);
+            panel1.Location = new Point(40, 38);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(909, 477);
+            panel1.TabIndex = 11;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnLogin);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(imputSenha);
-            Controls.Add(imputNome);
+            BackColor = SystemColors.ScrollBar;
+            ClientSize = new Size(985, 545);
+            Controls.Add(panel1);
             Name = "Form2";
             Text = "Form2";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -104,5 +125,7 @@ namespace Projeto_final
         private Label label1;
         private TextBox imputSenha;
         private TextBox imputNome;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Panel panel1;
     }
 }

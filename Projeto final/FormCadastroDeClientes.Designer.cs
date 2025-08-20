@@ -90,6 +90,7 @@
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(150, 31);
             txtCpf.TabIndex = 14;
+            txtCpf.TextChanged += txtCpf_TextChanged;
             // 
             // txtNome
             // 
@@ -97,6 +98,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(150, 31);
             txtNome.TabIndex = 10;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // txtCep
             // 
@@ -104,6 +106,7 @@
             txtCep.Name = "txtCep";
             txtCep.Size = new Size(150, 31);
             txtCep.TabIndex = 7;
+            txtCep.TextChanged += txtCep_TextChanged;
             // 
             // txtTelefone
             // 
@@ -111,6 +114,7 @@
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(150, 31);
             txtTelefone.TabIndex = 8;
+            txtTelefone.TextChanged += txtTelefone_TextChanged;
             // 
             // button1
             // 
