@@ -1,4 +1,4 @@
-﻿namespace Projeto_final.Forms
+﻿namespace Projeto_final.Forms.Veiculos
 {
     partial class Veiculos
     {
