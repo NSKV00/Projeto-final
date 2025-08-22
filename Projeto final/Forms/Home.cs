@@ -1,4 +1,5 @@
 using Projeto_final.Forms;
+using Projeto_final.Forms.Clientes;
 
 namespace Projeto_final
 {
@@ -16,8 +17,7 @@ namespace Projeto_final
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var listarClientes = new Clientes();
-            listarClientes.Show();
+            
         }
 
         private void Veiculos_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace Projeto_final
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            var listarClientes = new Clientes();
+            var listarClientes = new Cliente();
             listarClientes.Show();
         }
 
