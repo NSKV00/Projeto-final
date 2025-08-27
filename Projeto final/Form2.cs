@@ -60,7 +60,12 @@ namespace Projeto_final
                     }
                 }
             }
-        
-    }
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

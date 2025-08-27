@@ -43,7 +43,7 @@ namespace Projeto_final
             // btnLogin
             // 
             btnLogin.Anchor = AnchorStyles.None;
-            btnLogin.Location = new Point(358, 302);
+            btnLogin.Location = new Point(359, 298);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(112, 34);
             btnLogin.TabIndex = 10;
@@ -55,7 +55,7 @@ namespace Projeto_final
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(257, 187);
+            label2.Location = new Point(277, 188);
             label2.Name = "label2";
             label2.Size = new Size(58, 25);
             label2.TabIndex = 9;
@@ -65,7 +65,7 @@ namespace Projeto_final
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(272, 104);
+            label1.Location = new Point(277, 101);
             label1.Name = "label1";
             label1.Size = new Size(58, 25);
             label1.TabIndex = 8;
@@ -74,7 +74,7 @@ namespace Projeto_final
             // imputSenha
             // 
             imputSenha.Anchor = AnchorStyles.None;
-            imputSenha.Location = new Point(233, 236);
+            imputSenha.Location = new Point(244, 226);
             imputSenha.Name = "imputSenha";
             imputSenha.Size = new Size(354, 31);
             imputSenha.TabIndex = 7;
@@ -84,10 +84,11 @@ namespace Projeto_final
             // imputNome
             // 
             imputNome.Anchor = AnchorStyles.None;
-            imputNome.Location = new Point(233, 132);
+            imputNome.Location = new Point(244, 141);
             imputNome.Name = "imputNome";
             imputNome.Size = new Size(354, 31);
             imputNome.TabIndex = 6;
+            imputNome.Text = "\r\n";
             imputNome.TextChanged += imputNome_TextChanged;
             // 
             // panel1
@@ -99,9 +100,9 @@ namespace Projeto_final
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(btnLogin);
-            panel1.Location = new Point(40, 38);
+            panel1.Location = new Point(74, 55);
             panel1.Name = "panel1";
-            panel1.Size = new Size(909, 477);
+            panel1.Size = new Size(835, 444);
             panel1.TabIndex = 11;
             // 
             // Form2
@@ -113,6 +114,7 @@ namespace Projeto_final
             Controls.Add(panel1);
             Name = "Form2";
             Text = "Form2";
+            Load += Form2_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
