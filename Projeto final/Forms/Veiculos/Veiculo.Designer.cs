@@ -1,10 +1,46 @@
-﻿using Org.BouncyCastle.Asn1.Crmf;
-using static System.Net.Mime.MediaTypeNames;
-using System.Xml.Linq;
+﻿//namespace Projeto_final.Forms.Veiculos
+//{
+//    partial class Veiculo
+//    {
+//        /// <summary>
+//        /// Required designer variable.
+//        /// </summary>
+//        private System.ComponentModel.IContainer components = null;
 
-namespace Projeto_final
+//        /// <summary>
+//        /// Clean up any resources being used.
+//        /// </summary>
+//        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+//        protected override void Dispose(bool disposing)
+//        {
+//            if (disposing && (components != null))
+//            {
+//                components.Dispose();
+//            }
+//            base.Dispose(disposing);
+//        }
+
+//        #region Windows Form Designer generated code
+
+//        /// <summary>
+//        /// Required method for Designer support - do not modify
+//        /// the contents of this method with the code editor.
+//        /// </summary>
+//        private void InitializeComponent()
+//        {
+//            this.components = new System.ComponentModel.Container();
+//            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+//            this.ClientSize = new System.Drawing.Size(800, 450);
+//            this.Text = "Veiculo";
+//        }
+
+//        #endregion
+//    }
+//}
+
+namespace Projeto_final.Forms.Veiculos
 {
-    partial class Cveiculos
+    partial class Veiculo
     {
         /// <summary>
         ///  Required designer variable.
@@ -47,112 +83,100 @@ namespace Projeto_final
             // 
             // Textnamecliente
             // 
-            Textnamecliente.Location = new Point(226, 101);
-            Textnamecliente.Margin = new Padding(4);
+            Textnamecliente.Location = new Point(181, 81);
             Textnamecliente.Name = "Textnamecliente";
-            Textnamecliente.Size = new Size(194, 31);
+            Textnamecliente.Size = new Size(156, 27);
             Textnamecliente.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(226, 72);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(181, 58);
             label1.Name = "label1";
-            label1.Size = new Size(187, 25);
+            label1.Size = new Size(156, 20);
             label1.TabIndex = 1;
             label1.Text = "Nome do proprietário";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(226, 185);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(181, 148);
             label2.Name = "label2";
-            label2.Size = new Size(132, 25);
+            label2.Size = new Size(110, 20);
             label2.TabIndex = 2;
             label2.Text = "Marca do carro";
             // 
             // Textmarca
             // 
-            Textmarca.Location = new Point(226, 214);
-            Textmarca.Margin = new Padding(4);
+            Textmarca.Location = new Point(181, 171);
             Textmarca.Name = "Textmarca";
-            Textmarca.Size = new Size(194, 31);
+            Textmarca.Size = new Size(156, 27);
             Textmarca.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(226, 290);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(181, 232);
             label3.Name = "label3";
-            label3.Size = new Size(146, 25);
+            label3.Size = new Size(121, 20);
             label3.TabIndex = 4;
             label3.Text = "Modelo do carro";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(651, 185);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(521, 148);
             label4.Name = "label4";
-            label4.Size = new Size(139, 25);
+            label4.Size = new Size(117, 20);
             label4.TabIndex = 5;
             label4.Text = "Placa do veículo";
             // 
             // Textmodelo
             // 
-            Textmodelo.Location = new Point(226, 319);
-            Textmodelo.Margin = new Padding(4);
+            Textmodelo.Location = new Point(181, 255);
             Textmodelo.Name = "Textmodelo";
-            Textmodelo.Size = new Size(194, 31);
+            Textmodelo.Size = new Size(156, 27);
             Textmodelo.TabIndex = 6;
-            Textmodelo.TextChanged += Textmodelo_TextChanged;
             // 
             // Textplaca
             // 
-            Textplaca.Location = new Point(651, 214);
-            Textplaca.Margin = new Padding(4);
+            Textplaca.Location = new Point(521, 171);
             Textplaca.Name = "Textplaca";
-            Textplaca.Size = new Size(194, 31);
+            Textplaca.Size = new Size(156, 27);
             Textplaca.TabIndex = 7;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(651, 72);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(521, 58);
             label5.Name = "label5";
-            label5.Size = new Size(156, 25);
+            label5.Size = new Size(131, 20);
             label5.TabIndex = 8;
             label5.Text = "Ano de fabricação";
             // 
             // Textanodefab
             // 
-            Textanodefab.Location = new Point(651, 116);
-            Textanodefab.Margin = new Padding(4);
+            Textanodefab.Location = new Point(521, 93);
             Textanodefab.Name = "Textanodefab";
-            Textanodefab.Size = new Size(185, 31);
+            Textanodefab.Size = new Size(149, 27);
             Textanodefab.TabIndex = 9;
             // 
             // btnSalvar
             // 
             btnSalvar.BackColor = Color.DarkGray;
-            btnSalvar.Location = new Point(1520, 560);
-            btnSalvar.Margin = new Padding(4);
+            btnSalvar.Location = new Point(1216, 448);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(140, 49);
+            btnSalvar.Size = new Size(112, 39);
             btnSalvar.TabIndex = 10;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = false;
             btnSalvar.Click += btnSalvar_Click;
             // 
-            // Cveiculos
+            // CadastroCarros
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1709, 624);
+            ClientSize = new Size(1367, 499);
             Controls.Add(btnSalvar);
             Controls.Add(Textanodefab);
             Controls.Add(label5);
@@ -164,10 +188,8 @@ namespace Projeto_final
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(Textnamecliente);
-            Margin = new Padding(4);
-            Name = "Cveiculos";
+            Name = "CadastroCarros";
             Text = "Form1";
-            Load += Cveiculos_Load;
             ResumeLayout(false);
             PerformLayout();
         }

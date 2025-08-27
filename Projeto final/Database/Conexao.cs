@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace SistemaFarmacia.Database
+namespace SistemaDatabase.Conexoes
 {
     public class Conexao
     {

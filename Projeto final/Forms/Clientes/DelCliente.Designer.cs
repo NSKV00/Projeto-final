@@ -1,6 +1,6 @@
-﻿namespace Projeto_final.Forms
+﻿namespace Projeto_final.Forms.Clientes
 {
-    partial class CClientes
+    partial class DelCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CClientes";
+            this.Text = "DelCliente";
         }
 
         #endregion

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projeto_final.Forms.Veiculos
+namespace Projeto_final.Forms.Clientes
 {
-    public partial class DVeiculos : Form
+    public partial class VerCliente : Form
     {
-        public DVeiculos()
+        public VerCliente()
         {
             InitializeComponent();
         }

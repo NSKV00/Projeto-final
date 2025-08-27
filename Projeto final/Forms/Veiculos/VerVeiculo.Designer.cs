@@ -1,6 +1,6 @@
-﻿namespace Projeto_final.Forms
+﻿namespace Projeto_final.Forms.Veiculos
 {
-    partial class CFuncionarios
+    partial class VerVeiculo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // CFuncionarios
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "CFuncionarios";
-            Text = "CFuncionarios";
-            Load += CFuncionarios_Load;
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "VerVeiculo";
         }
 
         #endregion

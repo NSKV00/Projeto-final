@@ -1,12 +1,33 @@
-﻿using MySql.Data.MySqlClient;
-using SistemaFarmacia.Database;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Data;
+//using System.Drawing;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using System.Windows.Forms;
+
+//namespace Projeto_final.Forms.Veiculos
+//{
+//    public partial class Veiculo : Form
+//    {
+//        public Veiculo()
+//        {
+//            InitializeComponent();
+//        }
+//    }
+//}
+
+using MySql.Data.MySqlClient;
+using SistemaDatabase.Conexoes;
 using System.Text.RegularExpressions;
 
-namespace Projeto_final
+namespace Projeto_final.Forms.Veiculos
 {
-    public partial class Cveiculos : Form
+    public partial class Veiculo : Form
     {
-        public Cveiculos()
+        public Veiculo()
         {
             InitializeComponent();
 
@@ -86,16 +107,6 @@ namespace Projeto_final
                 return;
             }
 
-
-        }
-
-        private void Cveiculos_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Textmodelo_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }

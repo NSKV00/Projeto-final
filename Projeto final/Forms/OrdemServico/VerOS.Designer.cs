@@ -1,6 +1,6 @@
-﻿namespace Projeto_final.Forms.Funcionarios
+﻿namespace Projeto_final.Forms.OrdemServico
 {
-    partial class DFuncionarios
+    partial class VerOS
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "DFuncionarios";
+            this.Text = "VerOS";
         }
 
         #endregion

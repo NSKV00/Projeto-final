@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projeto_final.Forms.Veiculos
 {
-    public partial class Veiculos : Form
+    public partial class DelVeiculo : Form
     {
-        public Veiculos()
+        public DelVeiculo()
         {
             InitializeComponent();
         }

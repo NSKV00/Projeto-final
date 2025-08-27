@@ -1,60 +1,112 @@
+using Mysqlx.Session;
 using Projeto_final.Forms;
 using Projeto_final.Forms.Clientes;
+using Projeto_final.Forms.Funcionarios;
 using Projeto_final.Forms.Veiculos;
 
 namespace Projeto_final
 {
     public partial class Home : Form
     {
+        //Fields
+        private Button currentButton;
+        //private Random random;
+        private Form activeForm;
+        //private int tempIndex;
+
+        //Constructor
         public Home()
         {
             InitializeComponent();
+            CloseForm.Visible = false;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        //Methods
+        private void ActivateButton(object btnSender)
         {
-
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisableButton();
+                    currentButton = (Button)btnSender;
+                    CloseForm.Visible = true;
+                }
+            }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void DisableButton()
         {
-            
+            foreach (Control previousBtn in painelLateral.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.Enabled = true;
+                }
+            }
         }
 
-        private void Veiculos_Click(object sender, EventArgs e)
+        private void OpenForm(Form childForm, object btnSender)
         {
-            var listarVeiculos = new Veiculos();
-            listarVeiculos.Show();
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.painelDesktop.Controls.Add(childForm);
+            this.painelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            labelTitulo.Text = childForm.Text;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
+        //private void panel1_Paint_1(object sender, PaintEventArgs e)
+        //{
+        //    // Cria uma instância do novo formulário
+        //    var listarFuncionarios = new Funcionario();
 
-        private void MenuLateral_Load(object sender, EventArgs e)
-        {
-
-        }
+        //    // Exibe o novo formulário
+        //    listarFuncionarios.Show();
+        //}
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            var listarClientes = new Cliente();
-            listarClientes.Show();
+            OpenForm(new Forms.Clientes.Cliente(), sender);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnVeiculos_Click(object sender, EventArgs e)
         {
+            OpenForm(new Forms.Veiculos.Veiculo(), sender);
+        }
 
+        private void btnOS_Click(object sender, EventArgs e)
+        {
+            OpenForm(new Forms.OrdemServico.OS(), sender);
         }
 
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
-            // Cria uma instância do novo formulário
-            var listarFuncionarios = new funcionarios();
+            OpenForm(new Forms.Funcionarios.Funcionario(), sender);
+        }
 
-            // Exibe o novo formulário
-            listarFuncionarios.Show();
+        private void CloseForm_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DisableButton();
+            labelTitulo.Text = "HOME";
+            currentButton = null;
+            CloseForm.Visible = false;
         }
     }
 }

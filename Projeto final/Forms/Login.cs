@@ -1,7 +1,8 @@
 ﻿//ola
 
 using MySql.Data.MySqlClient;
-using SistemaFarmacia.Database;
+using SistemaDatabase.Conexoes;
+//using SistemaFarmacia.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
