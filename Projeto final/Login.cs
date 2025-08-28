@@ -51,7 +51,7 @@ namespace Projeto_final
                     {
                         MessageBox.Show("Login bem-sucedido!");
 
-                        new Form1().Show();
+                        new FormCadastroDeClientes().Show();
                         this.Hide();
                     }
                     else
