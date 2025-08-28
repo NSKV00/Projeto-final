@@ -30,9 +30,9 @@
         {
             label1 = new Label();
             panel1 = new Panel();
+            label2 = new Label();
             dataGridViewClientes = new DataGridView();
             btnCarregarClientes = new Button();
-            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).BeginInit();
             SuspendLayout();
@@ -55,15 +55,28 @@
             panel1.Size = new Size(802, 158);
             panel1.TabIndex = 1;
             // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(281, 44);
+            label2.Name = "label2";
+            label2.Size = new Size(207, 65);
+            label2.TabIndex = 1;
+            label2.Text = "Clientes";
+            // 
             // dataGridViewClientes
             // 
-            dataGridViewClientes.Anchor = AnchorStyles.None;
+            dataGridViewClientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewClientes.ColumnHeadersHeight = 34;
             dataGridViewClientes.Location = new Point(1, 148);
             dataGridViewClientes.Name = "dataGridViewClientes";
             dataGridViewClientes.RowHeadersWidth = 62;
             dataGridViewClientes.Size = new Size(799, 307);
             dataGridViewClientes.TabIndex = 4;
+            dataGridViewClientes.CellContentClick += dataGridViewClientes_CellContentClick;
             // 
             // btnCarregarClientes
             // 
@@ -76,18 +89,6 @@
             btnCarregarClientes.Text = "listar clientes";
             btnCarregarClientes.UseVisualStyleBackColor = false;
             btnCarregarClientes.Click += btnCarregarClientes_Click;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(281, 44);
-            label2.Name = "label2";
-            label2.Size = new Size(207, 65);
-            label2.TabIndex = 1;
-            label2.Text = "Clientes";
             // 
             // FormListagemDeClientes
             // 

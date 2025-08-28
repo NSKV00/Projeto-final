@@ -39,5 +39,10 @@ namespace Projeto_final
                 MessageBox.Show("Erro ao carregar clientes: " + ex.Message);
             }
         }
+
+        private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
