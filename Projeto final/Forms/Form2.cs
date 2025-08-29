@@ -1,7 +1,7 @@
 ﻿//ola
 
+using MySqlConnector;
 using MySql.Data.MySqlClient;
-using SistemaFarmacia.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,11 +36,11 @@ namespace Projeto_final
             string usuario = imputNome.Text.Trim();
             string senha = imputSenha.Text.Trim();
 
-            using (var conexao = Conexao.ObterConexao())
+            using (var conexao = Conexao.Conexao.ObterConexao())
             {
                 string query = "SELECT COUNT(*) FROM admin WHERE usuario = @usuario AND senha = @senha";
 
-                using (var cmd = new MySqlCommand(query, conexao))
+                using (var cmd = new MySqlConnector.MySqlCommand(query,conexao))
                 {
                     cmd.Parameters.AddWithValue("@usuario", usuario);
                     cmd.Parameters.AddWithValue("@senha", senha);
@@ -51,7 +51,7 @@ namespace Projeto_final
                     {
                         MessageBox.Show("Login bem-sucedido!");
 
-                        new Form1().Show();
+                        new Form2().Show();
                         this.Hide();
                     }
                     else
