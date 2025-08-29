@@ -1,6 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
-using SistemaFarmacia.Database;
+
 using System;
+using MySqlConnector; // Substitua MySql.Data.MySqlClient por MySqlConnector
+
+// Remova ou comente a linha abaixo:
+// using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,12 +79,12 @@ namespace Projeto_final
             string cep = txtCep.Text;
             string telefone = txtTelefone.Text;
 
-            using (var conexao = Conexao.ObterConexao())
+            using (var conexao = Conexao.Conexao.ObterConexao())
             {
                 string query = "INSERT INTO cliente(nome, cpf, telefone, cep) " +
                     "values(@nome, @cpf, @telefone, @cep)";
 
-                using (var cmd = new MySqlCommand(query, conexao))
+                using (var cmd = new MySqlConnector.MySqlCommand(query, conexao))
                 {
                     cmd.Parameters.AddWithValue("@nome", txtNome.Text);
                     cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
@@ -116,6 +120,11 @@ namespace Projeto_final
         }
 
         private void txtTelefone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
