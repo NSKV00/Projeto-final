@@ -1,4 +1,4 @@
-﻿namespace Projeto_final
+namespace Projeto_final
 {
     partial class FormCadastroDeClientes
     {
@@ -39,99 +39,99 @@
             txtTelefone = new TextBox();
             button1 = new Button();
             label6 = new Label();
-            panel1 = new Panel();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(460, 77);
+            label1.Location = new Point(117, 86);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(58, 25);
+            label1.Size = new Size(47, 20);
             label1.TabIndex = 0;
             label1.Text = "nome";
             // 
             // label2
             // 
             label2.Location = new Point(0, 0);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(100, 23);
+            label2.Size = new Size(80, 18);
             label2.TabIndex = 12;
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Location = new Point(649, 246);
+            label3.Location = new Point(452, 216);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(76, 25);
+            label3.Size = new Size(64, 20);
             label3.TabIndex = 2;
             label3.Text = "telefone";
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Location = new Point(478, 246);
+            label4.Location = new Point(117, 216);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(40, 25);
+            label4.Size = new Size(33, 20);
             label4.TabIndex = 3;
             label4.Text = "cep";
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.None;
-            label5.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(88, 142);
+            label5.Font = new Font("Segoe UI", 17F);
+            label5.Location = new Point(175, 15);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(226, 169);
+            label5.Size = new Size(269, 37);
             label5.TabIndex = 4;
-            label5.Text = "Cadastro de \r\nclientes\r\n";
+            label5.Text = "Cadastro de clientes";
+            label5.Click += label5_Click;
             // 
             // txtCpf
             // 
-            txtCpf.Anchor = AnchorStyles.None;
-            txtCpf.Location = new Point(622, 142);
+            txtCpf.Location = new Point(420, 124);
+            txtCpf.Margin = new Padding(2, 2, 2, 2);
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(150, 31);
+            txtCpf.Size = new Size(121, 27);
             txtCpf.TabIndex = 14;
             txtCpf.TextChanged += txtCpf_TextChanged;
             // 
             // txtNome
             // 
-            txtNome.Anchor = AnchorStyles.None;
-            txtNome.Location = new Point(426, 142);
+            txtNome.Location = new Point(93, 124);
+            txtNome.Margin = new Padding(2, 2, 2, 2);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(150, 31);
+            txtNome.Size = new Size(121, 27);
             txtNome.TabIndex = 10;
             txtNome.TextChanged += txtNome_TextChanged;
             // 
             // txtCep
             // 
-            txtCep.Anchor = AnchorStyles.None;
-            txtCep.Location = new Point(426, 291);
+            txtCep.Location = new Point(93, 250);
+            txtCep.Margin = new Padding(2, 2, 2, 2);
             txtCep.Name = "txtCep";
-            txtCep.Size = new Size(150, 31);
+            txtCep.Size = new Size(121, 27);
             txtCep.TabIndex = 7;
             txtCep.TextChanged += txtCep_TextChanged;
             // 
             // txtTelefone
             // 
-            txtTelefone.Anchor = AnchorStyles.None;
-            txtTelefone.Location = new Point(622, 291);
+            txtTelefone.Location = new Point(420, 250);
+            txtTelefone.Margin = new Padding(2, 2, 2, 2);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(150, 31);
+            txtTelefone.Size = new Size(121, 27);
             txtTelefone.TabIndex = 8;
             txtTelefone.TextChanged += txtTelefone_TextChanged;
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(484, 370);
+            button1.Location = new Point(233, 304);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(241, 34);
+            button1.Size = new Size(193, 27);
             button1.TabIndex = 9;
             button1.Text = "Cadastrar";
             button1.UseVisualStyleBackColor = true;
@@ -139,43 +139,33 @@
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Location = new Point(671, 77);
+            label6.Location = new Point(468, 90);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(37, 25);
+            label6.Size = new Size(30, 20);
             label6.TabIndex = 13;
             label6.Text = "cpf";
             // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            panel1.BackColor = SystemColors.Highlight;
-            panel1.Controls.Add(label5);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(396, 468);
-            panel1.TabIndex = 15;
-            // 
             // FormCadastroDeClientes
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(panel1);
+            ClientSize = new Size(640, 360);
             Controls.Add(label6);
             Controls.Add(button1);
             Controls.Add(txtTelefone);
             Controls.Add(txtCep);
             Controls.Add(txtNome);
             Controls.Add(txtCpf);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "FormCadastroDeClientes";
             Text = "FormCadastro";
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,6 +183,5 @@
         private TextBox txtTelefone;
         private Button button1;
         private Label label6;
-        private Panel panel1;
     }
 }
