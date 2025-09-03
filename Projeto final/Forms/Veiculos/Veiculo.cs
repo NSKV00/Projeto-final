@@ -70,17 +70,34 @@ namespace Projeto_final.Forms.Veiculos
                 return;
             }
 
+
             try
             {
                 using (var conexao = Conexao.ObterConexao())
                 {
-                    string sql = @"INSERT INTO veiculos (nome_cliente, marca, modelo, placa, ano_fabricacao) 
-                        VALUES (@nome_cliente, @marca, @modelo, @placa, @ano_fabricacao)";
+                    string sql = @"INSERT INTO veiculos (cpf_cliente, marca, modelo, placa, ano_fabricacao) 
+                        VALUES (@cpf_cliente, @marca, @modelo, @placa, @ano_fabricacao)";
 
+                    string queryCliente = "SELECT id, nome FROM cliente WHERE cpf = @cpf_cliente";
+
+                    using (var checkCmd = new MySqlCommand(queryCliente, conexao))
+                    {
+                        checkCmd.Parameters.AddWithValue("@cpf_cliente", Textnamecliente.Text);
+
+                        using (var reader = checkCmd.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                MessageBox.Show("CPF não encontrado no cadastro de clientes!");
+                                return;
+                            }
+                        }
+                    }
 
                     MySqlCommand cmd = new MySqlCommand(sql, conexao);
                     {
-                        cmd.Parameters.AddWithValue("@nome_cliente", Textnamecliente.Text);
+
+                        cmd.Parameters.AddWithValue("@cpf_cliente", Textnamecliente.Text);
                         cmd.Parameters.AddWithValue("@marca", Textmarca.Text);
                         cmd.Parameters.AddWithValue("@modelo", Textmodelo.Text);
                         cmd.Parameters.AddWithValue("@placa", Textplaca.Text);
@@ -107,6 +124,11 @@ namespace Projeto_final.Forms.Veiculos
                 return;
             }
 
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
