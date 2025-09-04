@@ -37,6 +37,8 @@
 //        #endregion
 //    }
 //}
+using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
 
 namespace Projeto_final.Forms.Veiculos
 {
@@ -79,11 +81,12 @@ namespace Projeto_final.Forms.Veiculos
             label5 = new Label();
             Textanodefab = new TextBox();
             btnSalvar = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // Textnamecliente
             // 
-            Textnamecliente.Location = new Point(181, 81);
+            Textnamecliente.Location = new Point(181, 93);
             Textnamecliente.Name = "Textnamecliente";
             Textnamecliente.Size = new Size(156, 27);
             Textnamecliente.TabIndex = 0;
@@ -93,9 +96,10 @@ namespace Projeto_final.Forms.Veiculos
             label1.AutoSize = true;
             label1.Location = new Point(181, 58);
             label1.Name = "label1";
-            label1.Size = new Size(156, 20);
+            label1.Size = new Size(138, 20);
             label1.TabIndex = 1;
-            label1.Text = "Nome do proprietário";
+            label1.Text = "Cpf do proprietario";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -158,13 +162,13 @@ namespace Projeto_final.Forms.Veiculos
             // 
             Textanodefab.Location = new Point(521, 93);
             Textanodefab.Name = "Textanodefab";
-            Textanodefab.Size = new Size(149, 27);
+            Textanodefab.Size = new Size(156, 27);
             Textanodefab.TabIndex = 9;
             // 
             // btnSalvar
             // 
             btnSalvar.BackColor = Color.DarkGray;
-            btnSalvar.Location = new Point(1216, 448);
+            btnSalvar.Location = new Point(565, 255);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(112, 39);
             btnSalvar.TabIndex = 10;
@@ -172,11 +176,19 @@ namespace Projeto_final.Forms.Veiculos
             btnSalvar.UseVisualStyleBackColor = false;
             btnSalvar.Click += btnSalvar_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(0, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 0;
+            // 
             // CadastroCarros
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1367, 499);
+            Controls.Add(button1);
             Controls.Add(btnSalvar);
             Controls.Add(Textanodefab);
             Controls.Add(label5);
@@ -207,5 +219,6 @@ namespace Projeto_final.Forms.Veiculos
         private Label label5;
         private TextBox Textanodefab;
         private Button btnSalvar;
+        private Button button1;
     }
 }

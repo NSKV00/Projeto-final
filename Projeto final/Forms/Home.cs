@@ -108,5 +108,15 @@ namespace Projeto_final
             currentButton = null;
             CloseForm.Visible = false;
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnaleatorio_Click(object sender, EventArgs e)
+        {
+            OpenForm(new Forms.Clientes.VerCliente(), sender);
+        }
     }
 }

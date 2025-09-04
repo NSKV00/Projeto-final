@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             painelLateral = new Panel();
-            btnaleatorio = new Button();
+            btnVerCliente = new Button();
             btnFuncionarios = new Button();
             btnOS = new Button();
             btnVeiculos = new Button();
@@ -38,9 +38,9 @@
             TituloLogo = new Label();
             fileSystemWatcher1 = new FileSystemWatcher();
             painelTopo = new Panel();
+            CloseForm = new Button();
             labelTitulo = new Label();
             painelDesktop = new Panel();
-            CloseForm = new Button();
             painelLateral.SuspendLayout();
             painelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
@@ -50,7 +50,7 @@
             // painelLateral
             // 
             painelLateral.BackColor = Color.FromArgb(51, 51, 76);
-            painelLateral.Controls.Add(btnaleatorio);
+            painelLateral.Controls.Add(btnVerCliente);
             painelLateral.Controls.Add(btnFuncionarios);
             painelLateral.Controls.Add(btnOS);
             painelLateral.Controls.Add(btnVeiculos);
@@ -58,35 +58,33 @@
             painelLateral.Controls.Add(painelLogo);
             painelLateral.Dock = DockStyle.Left;
             painelLateral.Location = new Point(0, 0);
-            painelLateral.Margin = new Padding(2);
             painelLateral.Name = "painelLateral";
-            painelLateral.Size = new Size(154, 338);
+            painelLateral.Size = new Size(220, 563);
             painelLateral.TabIndex = 0;
             // 
-            // btnaleatorio
+            // btnVerCliente
             // 
-            btnaleatorio.Dock = DockStyle.Top;
-            btnaleatorio.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
-            btnaleatorio.FlatStyle = FlatStyle.Flat;
-            btnaleatorio.Location = new Point(0, 168);
-            btnaleatorio.Margin = new Padding(2);
-            btnaleatorio.Name = "btnaleatorio";
-            btnaleatorio.Padding = new Padding(8, 0, 0, 0);
-            btnaleatorio.Size = new Size(154, 30);
-            btnaleatorio.TabIndex = 5;
-            btnaleatorio.Text = "button1";
-            btnaleatorio.UseVisualStyleBackColor = true;
+            btnVerCliente.Dock = DockStyle.Top;
+            btnVerCliente.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btnVerCliente.FlatStyle = FlatStyle.Flat;
+            btnVerCliente.Location = new Point(0, 280);
+            btnVerCliente.Name = "btnVerCliente";
+            btnVerCliente.Padding = new Padding(11, 0, 0, 0);
+            btnVerCliente.Size = new Size(220, 50);
+            btnVerCliente.TabIndex = 5;
+            btnVerCliente.Text = "Ver Clientes";
+            btnVerCliente.UseVisualStyleBackColor = true;
+            btnVerCliente.Click += btnaleatorio_Click;
             // 
             // btnFuncionarios
             // 
             btnFuncionarios.Dock = DockStyle.Top;
             btnFuncionarios.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
             btnFuncionarios.FlatStyle = FlatStyle.Flat;
-            btnFuncionarios.Location = new Point(0, 138);
-            btnFuncionarios.Margin = new Padding(2);
+            btnFuncionarios.Location = new Point(0, 230);
             btnFuncionarios.Name = "btnFuncionarios";
-            btnFuncionarios.Padding = new Padding(8, 0, 0, 0);
-            btnFuncionarios.Size = new Size(154, 30);
+            btnFuncionarios.Padding = new Padding(11, 0, 0, 0);
+            btnFuncionarios.Size = new Size(220, 50);
             btnFuncionarios.TabIndex = 4;
             btnFuncionarios.Text = "Funcionários";
             btnFuncionarios.UseVisualStyleBackColor = true;
@@ -97,11 +95,10 @@
             btnOS.Dock = DockStyle.Top;
             btnOS.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
             btnOS.FlatStyle = FlatStyle.Flat;
-            btnOS.Location = new Point(0, 108);
-            btnOS.Margin = new Padding(2);
+            btnOS.Location = new Point(0, 180);
             btnOS.Name = "btnOS";
-            btnOS.Padding = new Padding(8, 0, 0, 0);
-            btnOS.Size = new Size(154, 30);
+            btnOS.Padding = new Padding(11, 0, 0, 0);
+            btnOS.Size = new Size(220, 50);
             btnOS.TabIndex = 3;
             btnOS.Text = "Ordem de Serviço";
             btnOS.UseVisualStyleBackColor = true;
@@ -112,11 +109,10 @@
             btnVeiculos.Dock = DockStyle.Top;
             btnVeiculos.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
             btnVeiculos.FlatStyle = FlatStyle.Flat;
-            btnVeiculos.Location = new Point(0, 78);
-            btnVeiculos.Margin = new Padding(2);
+            btnVeiculos.Location = new Point(0, 130);
             btnVeiculos.Name = "btnVeiculos";
-            btnVeiculos.Padding = new Padding(8, 0, 0, 0);
-            btnVeiculos.Size = new Size(154, 30);
+            btnVeiculos.Padding = new Padding(11, 0, 0, 0);
+            btnVeiculos.Size = new Size(220, 50);
             btnVeiculos.TabIndex = 2;
             btnVeiculos.Text = "Veículos";
             btnVeiculos.UseVisualStyleBackColor = true;
@@ -127,11 +123,10 @@
             btnCliente.Dock = DockStyle.Top;
             btnCliente.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
             btnCliente.FlatStyle = FlatStyle.Flat;
-            btnCliente.Location = new Point(0, 48);
-            btnCliente.Margin = new Padding(2);
+            btnCliente.Location = new Point(0, 80);
             btnCliente.Name = "btnCliente";
-            btnCliente.Padding = new Padding(8, 0, 0, 0);
-            btnCliente.Size = new Size(154, 30);
+            btnCliente.Padding = new Padding(11, 0, 0, 0);
+            btnCliente.Size = new Size(220, 50);
             btnCliente.TabIndex = 1;
             btnCliente.Text = "Clientes";
             btnCliente.UseVisualStyleBackColor = true;
@@ -143,9 +138,8 @@
             painelLogo.Controls.Add(TituloLogo);
             painelLogo.Dock = DockStyle.Top;
             painelLogo.Location = new Point(0, 0);
-            painelLogo.Margin = new Padding(2);
             painelLogo.Name = "painelLogo";
-            painelLogo.Size = new Size(154, 48);
+            painelLogo.Size = new Size(220, 80);
             painelLogo.TabIndex = 1;
             // 
             // TituloLogo
@@ -153,10 +147,9 @@
             TituloLogo.AutoSize = true;
             TituloLogo.Font = new Font("Modern No. 20", 12F);
             TituloLogo.ForeColor = SystemColors.ButtonHighlight;
-            TituloLogo.Location = new Point(39, 17);
-            TituloLogo.Margin = new Padding(2, 0, 2, 0);
+            TituloLogo.Location = new Point(56, 28);
             TituloLogo.Name = "TituloLogo";
-            TituloLogo.Size = new Size(72, 18);
+            TituloLogo.Size = new Size(109, 25);
             TituloLogo.TabIndex = 0;
             TituloLogo.Text = "Car WoW";
             // 
@@ -171,11 +164,24 @@
             painelTopo.Controls.Add(CloseForm);
             painelTopo.Controls.Add(labelTitulo);
             painelTopo.Dock = DockStyle.Top;
-            painelTopo.Location = new Point(154, 0);
-            painelTopo.Margin = new Padding(2);
+            painelTopo.Location = new Point(220, 0);
             painelTopo.Name = "painelTopo";
-            painelTopo.Size = new Size(594, 48);
+            painelTopo.Size = new Size(849, 80);
             painelTopo.TabIndex = 1;
+            // 
+            // CloseForm
+            // 
+            CloseForm.BackColor = Color.Transparent;
+            CloseForm.Font = new Font("Segoe UI", 12F);
+            CloseForm.ForeColor = Color.Black;
+            CloseForm.Location = new Point(7, 15);
+            CloseForm.Margin = new Padding(4, 5, 4, 5);
+            CloseForm.Name = "CloseForm";
+            CloseForm.Size = new Size(44, 50);
+            CloseForm.TabIndex = 1;
+            CloseForm.Text = "X";
+            CloseForm.UseVisualStyleBackColor = false;
+            CloseForm.Click += CloseForm_Click;
             // 
             // labelTitulo
             // 
@@ -183,45 +189,32 @@
             labelTitulo.AutoSize = true;
             labelTitulo.Font = new Font("Modern No. 20", 15F);
             labelTitulo.ForeColor = Color.White;
-            labelTitulo.Location = new Point(269, 13);
+            labelTitulo.Location = new Point(384, 22);
+            labelTitulo.Margin = new Padding(4, 0, 4, 0);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(70, 22);
+            labelTitulo.Size = new Size(104, 31);
             labelTitulo.TabIndex = 0;
             labelTitulo.Text = "HOME";
             // 
             // painelDesktop
             // 
             painelDesktop.Dock = DockStyle.Fill;
-            painelDesktop.Location = new Point(154, 48);
-            painelDesktop.Margin = new Padding(2);
+            painelDesktop.Location = new Point(220, 80);
             painelDesktop.Name = "painelDesktop";
-            painelDesktop.Size = new Size(594, 290);
+            painelDesktop.Size = new Size(849, 483);
             painelDesktop.TabIndex = 2;
-            // 
-            // CloseForm
-            // 
-            CloseForm.BackColor = Color.Transparent;
-            CloseForm.Font = new Font("Segoe UI", 12F);
-            CloseForm.ForeColor = Color.Black;
-            CloseForm.Location = new Point(5, 9);
-            CloseForm.Name = "CloseForm";
-            CloseForm.Size = new Size(31, 30);
-            CloseForm.TabIndex = 1;
-            CloseForm.Text = "X";
-            CloseForm.UseVisualStyleBackColor = false;
-            CloseForm.Click += CloseForm_Click;
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(748, 338);
+            ClientSize = new Size(1069, 563);
             Controls.Add(painelDesktop);
             Controls.Add(painelTopo);
             Controls.Add(painelLateral);
-            Margin = new Padding(2);
             Name = "Home";
             Text = "Form1";
+            Load += Home_Load;
             painelLateral.ResumeLayout(false);
             painelLogo.ResumeLayout(false);
             painelLogo.PerformLayout();
@@ -237,7 +230,7 @@
         private FileSystemWatcher fileSystemWatcher1;
         private Button btnCliente;
         private Panel painelLogo;
-        private Button btnaleatorio;
+        private Button btnVerCliente;
         private Button btnFuncionarios;
         private Button btnOS;
         private Button btnVeiculos;
