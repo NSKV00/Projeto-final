@@ -55,6 +55,24 @@ namespace Projeto_final.Forms.OrdemServico
     partial class OS
     {
         private System.ComponentModel.IContainer components = null;
+        private Label lblCpfCliente;
+        private TextBox txtCpfCliente;
+        private Label lblPlacaVeiculo;
+        private TextBox txtPlacaVeiculo;
+        private Label lblCpfFuncionario;
+        private TextBox txtCpfFuncionario;
+        private Label lblProblema;
+        private TextBox txtProblema;
+        private Label lblServico;
+        private TextBox txtServico;
+        private Label lblData;
+        private DateTimePicker dtpData;
+        private Button btnSalvar;
+        private Button btnEditar;
+        private Button btnExcluir;
+        private DataGridView dgvOS;
+        private Label lblOS;
+
 
         protected override void Dispose(bool disposing)
         {
@@ -69,160 +87,142 @@ namespace Projeto_final.Forms.OrdemServico
 
         private void InitializeComponent()
         {
-            lblCliente = new Label();
-            txtCliente = new TextBox();
+            lblCpfCliente = new Label();
+            txtCpfCliente = new TextBox();
+            lblPlacaVeiculo = new Label();
+            txtPlacaVeiculo = new TextBox();
+            lblCpfFuncionario = new Label();
+            txtCpfFuncionario = new TextBox();
+            lblProblema = new Label();
+            txtProblema = new TextBox();
+            lblServico = new Label();
+            txtServico = new TextBox();
             lblData = new Label();
             dtpData = new DateTimePicker();
-            lblDescricao = new Label();
-            txtDescricao = new TextBox();
-            lblValor = new Label();
-            numValor = new NumericUpDown();
-            lblStatus = new Label();
-            cmbStatus = new ComboBox();
             btnSalvar = new Button();
-            btnExcluir = new Button();
-            lblLista = new Label();
-            dgvOS = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             btnEditar = new Button();
-            label1 = new Label();
+            btnExcluir = new Button();
+            dgvOS = new DataGridView();
             lblOS = new Label();
-            ((System.ComponentModel.ISupportInitialize)numValor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvOS).BeginInit();
             SuspendLayout();
             // 
-            // lblCliente
+            // lblCpfCliente
             // 
-            lblCliente.AutoSize = true;
-            lblCliente.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblCliente.Location = new Point(17, 102);
-            lblCliente.Name = "lblCliente";
-            lblCliente.Size = new Size(63, 23);
-            lblCliente.TabIndex = 0;
-            lblCliente.Text = "Cliente";
+            lblCpfCliente.AutoSize = true;
+            lblCpfCliente.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblCpfCliente.Location = new Point(20, 80);
+            lblCpfCliente.Name = "lblCpfCliente";
+            lblCpfCliente.Size = new Size(95, 23);
+            lblCpfCliente.Text = "CPF Cliente";
             // 
-            // txtCliente
+            // txtCpfCliente
             // 
-            txtCliente.Location = new Point(86, 98);
-            txtCliente.Margin = new Padding(3, 4, 3, 4);
-            txtCliente.Name = "txtCliente";
-            txtCliente.Size = new Size(313, 27);
-            txtCliente.TabIndex = 1;
+            txtCpfCliente.Location = new Point(140, 78);
+            txtCpfCliente.Size = new Size(200, 27);
+            txtCpfCliente.Name = "txtCpfCliente";
+            // 
+            // lblPlacaVeiculo
+            // 
+            lblPlacaVeiculo.AutoSize = true;
+            lblPlacaVeiculo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblPlacaVeiculo.Location = new Point(380, 80);
+            lblPlacaVeiculo.Name = "lblPlacaVeiculo";
+            lblPlacaVeiculo.Size = new Size(112, 23);
+            lblPlacaVeiculo.Text = "Placa Veículo";
+            // 
+            // txtPlacaVeiculo
+            // 
+            txtPlacaVeiculo.Location = new Point(500, 78);
+            txtPlacaVeiculo.Size = new Size(200, 27);
+            txtPlacaVeiculo.Name = "txtPlacaVeiculo";
+            // 
+            // lblCpfFuncionario
+            // 
+            lblCpfFuncionario.AutoSize = true;
+            lblCpfFuncionario.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblCpfFuncionario.Location = new Point(20, 120);
+            lblCpfFuncionario.Name = "lblCpfFuncionario";
+            lblCpfFuncionario.Size = new Size(127, 23);
+            lblCpfFuncionario.Text = "CPF Funcionário";
+            // 
+            // txtCpfFuncionario
+            // 
+            txtCpfFuncionario.Location = new Point(160, 118);
+            txtCpfFuncionario.Size = new Size(200, 27);
+            txtCpfFuncionario.Name = "txtCpfFuncionario";
+            // 
+            // lblProblema
+            // 
+            lblProblema.AutoSize = true;
+            lblProblema.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblProblema.Location = new Point(20, 160);
+            lblProblema.Name = "lblProblema";
+            lblProblema.Size = new Size(79, 23);
+            lblProblema.Text = "Problema";
+            // 
+            // txtProblema
+            // 
+            txtProblema.Location = new Point(120, 158);
+            txtProblema.Multiline = true;
+            txtProblema.Size = new Size(580, 50);
+            txtProblema.Name = "txtProblema";
+            // 
+            // lblServico
+            // 
+            lblServico.AutoSize = true;
+            lblServico.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblServico.Location = new Point(20, 220);
+            lblServico.Name = "lblServico";
+            lblServico.Size = new Size(64, 23);
+            lblServico.Text = "Serviço";
+            // 
+            // txtServico
+            // 
+            txtServico.Location = new Point(120, 218);
+            txtServico.Multiline = true;
+            txtServico.Size = new Size(580, 50);
+            txtServico.Name = "txtServico";
             // 
             // lblData
             // 
             lblData.AutoSize = true;
             lblData.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblData.Location = new Point(446, 102);
+            lblData.Location = new Point(20, 280);
             lblData.Name = "lblData";
-            lblData.Size = new Size(46, 23);
-            lblData.TabIndex = 2;
-            lblData.Text = "Data";
+            lblData.Size = new Size(81, 23);
+            lblData.Text = "Data OS";
             // 
             // dtpData
             // 
-            dtpData.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             dtpData.Format = DateTimePickerFormat.Short;
-            dtpData.Location = new Point(498, 98);
-            dtpData.Margin = new Padding(3, 4, 3, 4);
+            dtpData.Location = new Point(120, 278);
+            dtpData.Size = new Size(200, 27);
             dtpData.Name = "dtpData";
-            dtpData.Size = new Size(212, 27);
-            dtpData.TabIndex = 3;
-            // 
-            // lblDescricao
-            // 
-            lblDescricao.AutoSize = true;
-            lblDescricao.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblDescricao.Location = new Point(17, 141);
-            lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(83, 23);
-            lblDescricao.TabIndex = 4;
-            lblDescricao.Text = "Descrição";
-            // 
-            // txtDescricao
-            // 
-            txtDescricao.Location = new Point(117, 141);
-            txtDescricao.Margin = new Padding(3, 4, 3, 4);
-            txtDescricao.Multiline = true;
-            txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(669, 30);
-            txtDescricao.TabIndex = 5;
-            // 
-            // lblValor
-            // 
-            lblValor.AutoSize = true;
-            lblValor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblValor.Location = new Point(17, 197);
-            lblValor.Name = "lblValor";
-            lblValor.Size = new Size(49, 23);
-            lblValor.TabIndex = 6;
-            lblValor.Text = "Valor";
-            // 
-            // numValor
-            // 
-            numValor.DecimalPlaces = 2;
-            numValor.Location = new Point(86, 197);
-            numValor.Margin = new Padding(3, 4, 3, 4);
-            numValor.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            numValor.Name = "numValor";
-            numValor.Size = new Size(269, 27);
-            numValor.TabIndex = 7;
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblStatus.Location = new Point(384, 198);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(56, 23);
-            lblStatus.TabIndex = 8;
-            lblStatus.Text = "Status";
-            // 
-            // cmbStatus
-            // 
-            cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbStatus.FormattingEnabled = true;
-            cmbStatus.Items.AddRange(new object[] { "Aberta", "Em Andamento", "Finalizada" });
-            cmbStatus.Location = new Point(458, 196);
-            cmbStatus.Margin = new Padding(3, 4, 3, 4);
-            cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(231, 28);
-            cmbStatus.TabIndex = 9;
             // 
             // btnSalvar
             // 
             btnSalvar.BackColor = Color.FromArgb(192, 255, 192);
-            btnSalvar.Location = new Point(17, 252);
-            btnSalvar.Margin = new Padding(3, 4, 3, 4);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(85, 38);
-            btnSalvar.TabIndex = 11;
+            btnSalvar.Location = new Point(20, 320);
+            btnSalvar.Size = new Size(90, 35);
             btnSalvar.Text = "Salvar";
-            btnSalvar.UseVisualStyleBackColor = false;
             btnSalvar.Click += btnSalvar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.FromArgb(255, 255, 192);
+            btnEditar.Location = new Point(120, 320);
+            btnEditar.Size = new Size(90, 35);
+            btnEditar.Text = "Editar";
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
             btnExcluir.BackColor = Color.FromArgb(255, 192, 192);
-            btnExcluir.Location = new Point(199, 252);
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(85, 38);
-            btnExcluir.TabIndex = 16;
+            btnExcluir.Location = new Point(220, 320);
+            btnExcluir.Size = new Size(90, 35);
             btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
-            // 
-            // lblLista
-            // 
-            lblLista.AutoSize = true;
-            lblLista.Font = new System.Drawing.Font("Segoe UI", 15F);
-            lblLista.Location = new Point(17, 320);
-            lblLista.Name = "lblLista";
-            lblLista.Size = new Size(310, 35);
-            lblLista.TabIndex = 14;
-            lblLista.Text = "Lista de Ordens de Serviço";
             // 
             // dgvOS
             // 
@@ -230,114 +230,51 @@ namespace Projeto_final.Forms.OrdemServico
             dgvOS.AllowUserToDeleteRows = false;
             dgvOS.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvOS.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOS.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
             dgvOS.Dock = DockStyle.Bottom;
-            dgvOS.Location = new Point(0, 368);
-            dgvOS.Margin = new Padding(3, 4, 3, 4);
+            dgvOS.Location = new Point(0, 380);
+            dgvOS.Size = new Size(800, 200);
             dgvOS.Name = "dgvOS";
             dgvOS.ReadOnly = true;
-            dgvOS.RowHeadersVisible = false;
-            dgvOS.RowHeadersWidth = 51;
             dgvOS.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvOS.Size = new Size(798, 184);
-            dgvOS.TabIndex = 15;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Id";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Cliente";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.FromArgb(255, 255, 192);
-            btnEditar.Location = new Point(108, 252);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(85, 38);
-            btnEditar.TabIndex = 17;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += btnEditar_Click;
-            // 
-            // label1
-            // 
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(100, 23);
-            label1.TabIndex = 0;
             // 
             // lblOS
             // 
-            lblOS.Font = new System.Drawing.Font("Segoe UI", 20F);
-            lblOS.Location = new Point(15, 23);
-            lblOS.Name = "lblOS";
-            lblOS.Size = new Size(502, 47);
-            lblOS.TabIndex = 18;
+            lblOS.Font = new System.Drawing.Font("Segoe UI", 16F);
+            lblOS.Location = new Point(20, 20);
+            lblOS.Size = new Size(500, 40);
             lblOS.Text = "Emissão de Ordem de Serviço";
             // 
-            // Form1
+            // OS
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(798, 552);
+            ClientSize = new Size(800, 580);
             Controls.Add(lblOS);
-            Controls.Add(label1);
-            Controls.Add(dgvOS);
-            Controls.Add(lblLista);
-            Controls.Add(btnExcluir);
-            Controls.Add(btnEditar);
-            Controls.Add(btnSalvar);
-            Controls.Add(cmbStatus);
-            Controls.Add(lblStatus);
-            Controls.Add(numValor);
-            Controls.Add(lblValor);
-            Controls.Add(txtDescricao);
-            Controls.Add(lblDescricao);
-            Controls.Add(dtpData);
+            Controls.Add(lblCpfCliente);
+            Controls.Add(txtCpfCliente);
+            Controls.Add(lblPlacaVeiculo);
+            Controls.Add(txtPlacaVeiculo);
+            Controls.Add(lblCpfFuncionario);
+            Controls.Add(txtCpfFuncionario);
+            Controls.Add(lblProblema);
+            Controls.Add(txtProblema);
+            Controls.Add(lblServico);
+            Controls.Add(txtServico);
             Controls.Add(lblData);
-            Controls.Add(txtCliente);
-            Controls.Add(lblCliente);
+            Controls.Add(dtpData);
+            Controls.Add(btnSalvar);
+            Controls.Add(btnEditar);
+            Controls.Add(btnExcluir);
+            Controls.Add(dgvOS);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
-            Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Emissão e Controle de OS";
-            ((System.ComponentModel.ISupportInitialize)numValor).EndInit();
+            Text = "Controle de Ordens de Serviço";
+            Load += OS_Load;
             ((System.ComponentModel.ISupportInitialize)dgvOS).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
-
-        #endregion
-
-        private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.DateTimePicker dtpData;
-        private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.NumericUpDown numValor;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Label lblLista;
-        private System.Windows.Forms.DataGridView dgvOS;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private Button btnEditar;
-        private Label label1;
-        private Label lblOS;
     }
+    #endregion
 }

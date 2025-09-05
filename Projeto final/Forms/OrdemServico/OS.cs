@@ -1,33 +1,7 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.ComponentModel;
-//using System.Data;
-//using System.Drawing;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using System.Windows.Forms;
-
-//namespace Projeto_final.Forms.OrdemServico
-//{
-//    public partial class OS : Form
-//    {
-//        public OS()
-//        {
-//            InitializeComponent();
-//        }
-
-//        private void OS_Load(object sender, EventArgs e)
-//        {
-
-//        }
-//    }
-//}
-
-using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Asn1.Cmp;
+﻿using MySql.Data.MySqlClient;
 using SistemaDatabase.Conexoes;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Projeto_final.Forms.OrdemServico
@@ -39,94 +13,163 @@ namespace Projeto_final.Forms.OrdemServico
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void OS_Load(object sender, EventArgs e)
         {
-
-            dgvOS.Columns.Add("Id", "Id");
-            dgvOS.Columns.Add("Cliente", "Cliente");
-            dgvOS.Columns.Add("Dataa", "Dataa");
-            dgvOS.Columns.Add("Descricao", "Descrição");
-            dgvOS.Columns.Add("Valor", "Valor");
-            dgvOS.Columns.Add("Status", "Status");
+            CarregarOS();
         }
 
+        private void CarregarOS()
+        {
+            try
+            {
+                using (var conexao = Conexao.ObterConexao())
+                {
+                    string sql = @"SELECT id, cpf_cliente, placa_veiculo, cpf_funcionario, problema, servico, data_os 
+                                   FROM os";
 
-
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(sql, conexao))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        dgvOS.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar OS: {ex.Message}");
+            }
+        }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(txtCpfCliente.Text) ||
+                string.IsNullOrWhiteSpace(txtPlacaVeiculo.Text) ||
+                string.IsNullOrWhiteSpace(txtCpfFuncionario.Text) ||
+                string.IsNullOrWhiteSpace(txtProblema.Text) ||
+                string.IsNullOrWhiteSpace(txtServico.Text))
             {
-                if (string.IsNullOrWhiteSpace(txtCliente.Text) ||
-                   string.IsNullOrWhiteSpace(dtpData.Text) ||
-                   string.IsNullOrWhiteSpace(txtDescricao.Text) ||
-                   string.IsNullOrWhiteSpace(numValor.Text) ||
-                   string.IsNullOrWhiteSpace(cmbStatus.Text))
-                {
-                    MessageBox.Show("Por favor preencha todos os campos");
-                    return;
-                }
+                MessageBox.Show("Por favor preencha todos os campos");
+                return;
+            }
 
-                try
+            try
+            {
+                using (var conexao = Conexao.ObterConexao())
                 {
-                    using (var conexao = Conexao.ObterConexao())
+                    string sql = @"INSERT INTO os (cpf_cliente, placa_veiculo, cpf_funcionario, problema, data_os, servico)
+                                   VALUES (@cpf_cliente, @placa_veiculo, @cpf_funcionario, @problema, @data_os, @servico)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
                     {
-                        string sql = @"INSERT INTO cliente ( nome, `dataa` , descricao, valor, status) 
-                        VALUES ( @nome, @dataa , @descricao, @valor, @status)";
+                        cmd.Parameters.AddWithValue("@cpf_cliente", txtCpfCliente.Text);
+                        cmd.Parameters.AddWithValue("@placa_veiculo", txtPlacaVeiculo.Text);
+                        cmd.Parameters.AddWithValue("@cpf_funcionario", txtCpfFuncionario.Text);
+                        cmd.Parameters.AddWithValue("@problema", txtProblema.Text);
+                        cmd.Parameters.AddWithValue("@data_os", dtpData.Value);
+                        cmd.Parameters.AddWithValue("@servico", txtServico.Text);
 
-
-                        MySqlCommand cmd = new MySqlCommand(sql, conexao);
-                        {
-                            cmd.Parameters.AddWithValue("@nome", txtCliente.Text);
-                            cmd.Parameters.AddWithValue("@dataa", dtpData.Value);
-                            cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text);
-                            cmd.Parameters.AddWithValue("@valor", numValor.Text);
-                            cmd.Parameters.AddWithValue("@status", (cmbStatus.Text));
-
-
-                            cmd.ExecuteNonQuery();
-
-                            MessageBox.Show("Dados salvos com sucesso!");
-
-                            txtCliente.Clear();
-                            dtpData.Value = DateTime.Now;
-
-                            txtDescricao.Clear();
-                            numValor.Value = 0;
-
-
-                        }
+                        cmd.ExecuteNonQuery();
                     }
+
+                    MessageBox.Show("Ordem de Serviço salva com sucesso!");
+                    LimparCampos();
+                    CarregarOS();
                 }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erro ao salvar os dados: {ex.Message}");
-                    return;
-                }
-
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao salvar a OS: {ex.Message}");
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (dgvOS.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma OS para editar.");
+                return;
+            }
 
+            int id = Convert.ToInt32(dgvOS.SelectedRows[0].Cells["id"].Value);
+
+            try
+            {
+                using (var conexao = Conexao.ObterConexao())
+                {
+                    string sql = @"UPDATE os 
+                                   SET cpf_cliente=@cpf_cliente, placa_veiculo=@placa_veiculo, cpf_funcionario=@cpf_funcionario,
+                                       problema=@problema, servico=@servico, data_os=@data_os
+                                   WHERE id=@id";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@cpf_cliente", txtCpfCliente.Text);
+                        cmd.Parameters.AddWithValue("@placa_veiculo", txtPlacaVeiculo.Text);
+                        cmd.Parameters.AddWithValue("@cpf_funcionario", txtCpfFuncionario.Text);
+                        cmd.Parameters.AddWithValue("@problema", txtProblema.Text);
+                        cmd.Parameters.AddWithValue("@servico", txtServico.Text);
+                        cmd.Parameters.AddWithValue("@data_os", dtpData.Value);
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("OS atualizada com sucesso!");
+                    LimparCampos();
+                    CarregarOS();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao editar a OS: {ex.Message}");
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Quer mesmo apagar esse registro?", "Confirmação de Exclusão",
+            if (dgvOS.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione uma OS para excluir.");
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvOS.SelectedRows[0].Cells["id"].Value);
+
+            DialogResult resultado = MessageBox.Show("Quer mesmo apagar essa OS?", "Confirmação de Exclusão",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (resultado == DialogResult.Yes)
             {
-                MessageBox.Show("- Registro apagado com sucesso -");
+                try
+                {
+                    using (var conexao = Conexao.ObterConexao())
+                    {
+                        string sql = "DELETE FROM os WHERE id=@id";
+                        using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+                        {
+                            cmd.Parameters.AddWithValue("@id", id);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    MessageBox.Show("OS excluída com sucesso!");
+                    CarregarOS();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao excluir: {ex.Message}");
+                }
             }
-            else
-            {
-                MessageBox.Show("- Ação cancelado -");
-            }
+        }
+
+        private void LimparCampos()
+        {
+            txtCpfCliente.Clear();
+            txtPlacaVeiculo.Clear();
+            txtCpfFuncionario.Clear();
+            txtProblema.Clear();
+            txtServico.Clear();
+            dtpData.Value = DateTime.Now;
         }
     }
 }
