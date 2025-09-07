@@ -7,7 +7,9 @@
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
+            {
                 components.Dispose();
+            }
             base.Dispose(disposing);
         }
 
@@ -18,27 +20,27 @@
             panelContainer = new Panel();
             lblTitulo = new Label();
             lblNome = new Label();
-            lblCpf = new Label();
-            lblCep = new Label();
-            lblTelefone = new Label();
             txtNome = new TextBox();
+            lblCpf = new Label();
             txtCpf = new TextBox();
+            lblCep = new Label();
             txtCep = new TextBox();
+            lblTelefone = new Label();
             txtTelefone = new TextBox();
             btnCadastrar = new Button();
+            btnEditar = new Button();
+            btnExcluir = new Button();
+            dgvClientes = new DataGridView();
 
             panelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(dgvClientes)).BeginInit();
             SuspendLayout();
-
             // 
             // panelContainer
             // 
             panelContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContainer.BackColor = Color.FromArgb(245, 245, 245);
             panelContainer.BorderStyle = BorderStyle.FixedSingle;
-            panelContainer.Padding = new Padding(20);
-            panelContainer.Location = new Point(30, 20);
-            panelContainer.Size = new Size(740, 400);
             panelContainer.Controls.Add(lblTitulo);
             panelContainer.Controls.Add(lblNome);
             panelContainer.Controls.Add(txtNome);
@@ -49,119 +51,157 @@
             panelContainer.Controls.Add(lblTelefone);
             panelContainer.Controls.Add(txtTelefone);
             panelContainer.Controls.Add(btnCadastrar);
-
+            panelContainer.Controls.Add(btnEditar);
+            panelContainer.Controls.Add(btnExcluir);
+            panelContainer.Controls.Add(dgvClientes);
+            panelContainer.Location = new Point(12, 12);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Padding = new Padding(12);
+            panelContainer.Size = new Size(700, 400);
+            panelContainer.TabIndex = 0;
             // 
             // lblTitulo
             // 
-            lblTitulo.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblTitulo.ForeColor = Color.FromArgb(33, 37, 41);
-            lblTitulo.Text = "Cadastro de Clientes";
             lblTitulo.Location = new Point(150, 10);
-            lblTitulo.Size = new Size(450, 50);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(400, 30);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Cadastro de Clientes";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
-
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI", 10F);
-            lblNome.ForeColor = Color.FromArgb(55, 65, 81);
+            lblNome.Location = new Point(20, 55);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(49, 19);
+            lblNome.TabIndex = 1;
             lblNome.Text = "Nome:";
-            lblNome.Location = new Point(50, 80);
-
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(50, 105);
-            txtNome.Size = new Size(300, 30);
             txtNome.Font = new Font("Segoe UI", 10F);
-            txtNome.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtNome.BorderStyle = BorderStyle.FixedSingle;
-
+            txtNome.Location = new Point(20, 75);
+            txtNome.Size = new Size(200, 25);
+            txtNome.TabIndex = 2;
             // 
             // lblCpf
             // 
             lblCpf.AutoSize = true;
             lblCpf.Font = new Font("Segoe UI", 10F);
-            lblCpf.ForeColor = Color.FromArgb(55, 65, 81);
+            lblCpf.Location = new Point(240, 55);
+            lblCpf.Name = "lblCpf";
+            lblCpf.Size = new Size(36, 19);
+            lblCpf.TabIndex = 3;
             lblCpf.Text = "CPF:";
-            lblCpf.Location = new Point(400, 80);
-
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(400, 105);
-            txtCpf.Size = new Size(250, 30);
             txtCpf.Font = new Font("Segoe UI", 10F);
-            txtCpf.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtCpf.BorderStyle = BorderStyle.FixedSingle;
-
-            // 
-            // lblCep
-            // 
-            lblCep.AutoSize = true;
-            lblCep.Font = new Font("Segoe UI", 10F);
-            lblCep.ForeColor = Color.FromArgb(55, 65, 81);
-            lblCep.Text = "CEP:";
-            lblCep.Location = new Point(50, 160);
-
-            // 
-            // txtCep
-            // 
-            txtCep.Location = new Point(50, 185);
-            txtCep.Size = new Size(300, 30);
-            txtCep.Font = new Font("Segoe UI", 10F);
-            txtCep.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtCep.BorderStyle = BorderStyle.FixedSingle;
-
+            txtCpf.Location = new Point(240, 75);
+            txtCpf.Size = new Size(150, 25);
+            txtCpf.TabIndex = 4;
             // 
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
             lblTelefone.Font = new Font("Segoe UI", 10F);
-            lblTelefone.ForeColor = Color.FromArgb(55, 65, 81);
+            lblTelefone.Location = new Point(410, 55);
+            lblTelefone.Name = "lblTelefone";
+            lblTelefone.Size = new Size(62, 19);
+            lblTelefone.TabIndex = 5;
             lblTelefone.Text = "Telefone:";
-            lblTelefone.Location = new Point(400, 160);
-
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(400, 185);
-            txtTelefone.Size = new Size(250, 30);
             txtTelefone.Font = new Font("Segoe UI", 10F);
-            txtTelefone.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtTelefone.BorderStyle = BorderStyle.FixedSingle;
-
+            txtTelefone.Location = new Point(410, 75);
+            txtTelefone.Size = new Size(120, 25);
+            txtTelefone.TabIndex = 6;
+            // 
+            // lblCep
+            // 
+            lblCep.AutoSize = true;
+            lblCep.Font = new Font("Segoe UI", 10F);
+            lblCep.Location = new Point(550, 55);
+            lblCep.Name = "lblCep";
+            lblCep.Size = new Size(36, 19);
+            lblCep.TabIndex = 7;
+            lblCep.Text = "CEP:";
+            // 
+            // txtCep
+            // 
+            txtCep.Font = new Font("Segoe UI", 10F);
+            txtCep.Location = new Point(550, 75);
+            txtCep.Size = new Size(120, 25);
+            txtCep.TabIndex = 8;
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(200, 260);
-            btnCadastrar.Size = new Size(300, 40);
             btnCadastrar.BackColor = Color.FromArgb(72, 168, 255);
-            btnCadastrar.ForeColor = Color.White;
             btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.FlatAppearance.BorderSize = 0;
-            btnCadastrar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnCadastrar.Text = "Cadastrar Cliente";
-            btnCadastrar.Click += button1_Click;
-            btnCadastrar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnCadastrar.ForeColor = Color.White;
+            btnCadastrar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCadastrar.Location = new Point(20, 110);
+            btnCadastrar.Size = new Size(200, 30);
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.FromArgb(255, 193, 7);
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnEditar.Location = new Point(240, 110);
+            btnEditar.Size = new Size(200, 30);
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.BackColor = Color.FromArgb(220, 53, 69);
+            btnExcluir.FlatStyle = FlatStyle.Flat;
+            btnExcluir.ForeColor = Color.White;
+            btnExcluir.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnExcluir.Location = new Point(460, 110);
+            btnExcluir.Size = new Size(200, 30);
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // dgvClientes
+            // 
+            dgvClientes.Location = new Point(20, 150);
+            dgvClientes.Size = new Size(650, 220);
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvClientes.MultiSelect = false;
+            dgvClientes.ReadOnly = true;
+            dgvClientes.TabIndex = 12;
+            dgvClientes.SelectionChanged += dgvClientes_SelectionChanged;
 
             // 
-            // Cliente Form
+            // Cliente
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(730, 430);
             Controls.Add(panelContainer);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "Cliente";
             StartPosition = FormStartPosition.CenterScreen;
+            Name = "Cliente";
             Text = "Cadastro de Clientes";
-
             panelContainer.ResumeLayout(false);
             panelContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(dgvClientes)).EndInit();
             ResumeLayout(false);
         }
 
@@ -178,5 +218,8 @@
         private TextBox txtCep;
         private TextBox txtTelefone;
         private Button btnCadastrar;
+        private Button btnEditar;
+        private Button btnExcluir;
+        private DataGridView dgvClientes;
     }
 }
