@@ -1,78 +1,8 @@
-﻿//namespace Projeto_final.Forms.OrdemServico
-//{
-//    partial class OS
-//    {
-//        /// <summary>
-//        /// Required designer variable.
-//        /// </summary>
-//        private System.ComponentModel.IContainer components = null;
-
-//        /// <summary>
-//        /// Clean up any resources being used.
-//        /// </summary>
-//        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-//        protected override void Dispose(bool disposing)
-//        {
-//            if (disposing && (components != null))
-//            {
-//                components.Dispose();
-//            }
-//            base.Dispose(disposing);
-//        }
-
-//        #region Windows Form Designer generated code
-
-//        /// <summary>
-//        /// Required method for Designer support - do not modify
-//        /// the contents of this method with the code editor.
-//        /// </summary>
-//        private void InitializeComponent()
-//        {
-//            SuspendLayout();
-//            // 
-//            // OS
-//            // 
-//            AutoScaleDimensions = new SizeF(10F, 25F);
-//            AutoScaleMode = AutoScaleMode.Font;
-//            ClientSize = new Size(800, 450);
-//            Name = "OS";
-//            Text = "OS";
-//            Load += OS_Load;
-//            ResumeLayout(false);
-//        }
-
-//        #endregion
-//    }
-//}
-
-
-using static System.Net.Mime.MediaTypeNames;
-using System.Drawing.Printing;
-using System.Xml.Linq;
-
-namespace Projeto_final.Forms.OrdemServico
+﻿namespace Projeto_final.Forms.OrdemServico
 {
     partial class OS
     {
         private System.ComponentModel.IContainer components = null;
-        private Label lblCpfCliente;
-        private TextBox txtCpfCliente;
-        private Label lblPlacaVeiculo;
-        private TextBox txtPlacaVeiculo;
-        private Label lblCpfFuncionario;
-        private TextBox txtCpfFuncionario;
-        private Label lblProblema;
-        private TextBox txtProblema;
-        private Label lblServico;
-        private TextBox txtServico;
-        private Label lblData;
-        private DateTimePicker dtpData;
-        private Button btnSalvar;
-        private Button btnEditar;
-        private Button btnExcluir;
-        private DataGridView dgvOS;
-        private Label lblOS;
-
 
         protected override void Dispose(bool disposing)
         {
@@ -83,198 +13,256 @@ namespace Projeto_final.Forms.OrdemServico
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código gerado pelo Windows Form Designer
 
         private void InitializeComponent()
         {
-            lblCpfCliente = new Label();
-            txtCpfCliente = new TextBox();
-            lblPlacaVeiculo = new Label();
-            txtPlacaVeiculo = new TextBox();
-            lblCpfFuncionario = new Label();
-            txtCpfFuncionario = new TextBox();
-            lblProblema = new Label();
-            txtProblema = new TextBox();
-            lblServico = new Label();
-            txtServico = new TextBox();
-            lblData = new Label();
-            dtpData = new DateTimePicker();
-            btnSalvar = new Button();
-            btnEditar = new Button();
-            btnExcluir = new Button();
-            dgvOS = new DataGridView();
-            lblOS = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvOS).BeginInit();
-            SuspendLayout();
-            // 
-            // lblCpfCliente
-            // 
-            lblCpfCliente.AutoSize = true;
-            lblCpfCliente.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblCpfCliente.Location = new Point(20, 80);
-            lblCpfCliente.Name = "lblCpfCliente";
-            lblCpfCliente.Size = new Size(95, 23);
-            lblCpfCliente.Text = "CPF Cliente";
-            // 
-            // txtCpfCliente
-            // 
-            txtCpfCliente.Location = new Point(140, 78);
-            txtCpfCliente.Size = new Size(200, 27);
-            txtCpfCliente.Name = "txtCpfCliente";
-            // 
-            // lblPlacaVeiculo
-            // 
-            lblPlacaVeiculo.AutoSize = true;
-            lblPlacaVeiculo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblPlacaVeiculo.Location = new Point(380, 80);
-            lblPlacaVeiculo.Name = "lblPlacaVeiculo";
-            lblPlacaVeiculo.Size = new Size(112, 23);
-            lblPlacaVeiculo.Text = "Placa Veículo";
-            // 
-            // txtPlacaVeiculo
-            // 
-            txtPlacaVeiculo.Location = new Point(500, 78);
-            txtPlacaVeiculo.Size = new Size(200, 27);
-            txtPlacaVeiculo.Name = "txtPlacaVeiculo";
-            // 
-            // lblCpfFuncionario
-            // 
-            lblCpfFuncionario.AutoSize = true;
-            lblCpfFuncionario.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblCpfFuncionario.Location = new Point(20, 120);
-            lblCpfFuncionario.Name = "lblCpfFuncionario";
-            lblCpfFuncionario.Size = new Size(127, 23);
-            lblCpfFuncionario.Text = "CPF Funcionário";
-            // 
-            // txtCpfFuncionario
-            // 
-            txtCpfFuncionario.Location = new Point(160, 118);
-            txtCpfFuncionario.Size = new Size(200, 27);
-            txtCpfFuncionario.Name = "txtCpfFuncionario";
-            // 
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblVeiculo = new System.Windows.Forms.Label();
+            this.lblFuncionario = new System.Windows.Forms.Label();
+            this.lblProblema = new System.Windows.Forms.Label();
+            this.lblServico = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.cmbVeiculo = new System.Windows.Forms.ComboBox();
+            this.cmbFuncionario = new System.Windows.Forms.ComboBox();
+
+            this.txtProblema = new System.Windows.Forms.TextBox();
+            this.txtServico = new System.Windows.Forms.TextBox();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
+
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnFecharOS = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+
+            this.dgvOS = new System.Windows.Forms.DataGridView();
+
+            // Filtros
+            this.lblFiltroCliente = new System.Windows.Forms.Label();
+            this.lblFiltroVeiculo = new System.Windows.Forms.Label();
+            this.lblFiltroStatus = new System.Windows.Forms.Label();
+            this.lblFiltroPeriodo = new System.Windows.Forms.Label();
+
+            this.cmbFiltroCliente = new System.Windows.Forms.ComboBox();
+            this.cmbFiltroVeiculo = new System.Windows.Forms.ComboBox();
+            this.cmbFiltroStatus = new System.Windows.Forms.ComboBox();
+            this.dtpFiltroInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpFiltroFim = new System.Windows.Forms.DateTimePicker();
+
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).BeginInit();
+            this.SuspendLayout();
+
+            // --------------------- CONTROLES PRINCIPAIS ---------------------
+            // lblCliente
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(30, 30);
+            this.lblCliente.Text = "Cliente";
+            // cmbCliente
+            this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCliente.Location = new System.Drawing.Point(120, 27);
+            this.cmbCliente.Size = new System.Drawing.Size(220, 28);
+
+            // lblVeiculo
+            this.lblVeiculo.AutoSize = true;
+            this.lblVeiculo.Location = new System.Drawing.Point(380, 30);
+            this.lblVeiculo.Text = "Veículo";
+            // cmbVeiculo
+            this.cmbVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVeiculo.Location = new System.Drawing.Point(460, 27);
+            this.cmbVeiculo.Size = new System.Drawing.Size(220, 28);
+
+            // lblFuncionario
+            this.lblFuncionario.AutoSize = true;
+            this.lblFuncionario.Location = new System.Drawing.Point(30, 75);
+            this.lblFuncionario.Text = "Funcionário";
+            // cmbFuncionario
+            this.cmbFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFuncionario.Location = new System.Drawing.Point(120, 72);
+            this.cmbFuncionario.Size = new System.Drawing.Size(220, 28);
+
             // lblProblema
-            // 
-            lblProblema.AutoSize = true;
-            lblProblema.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblProblema.Location = new Point(20, 160);
-            lblProblema.Name = "lblProblema";
-            lblProblema.Size = new Size(79, 23);
-            lblProblema.Text = "Problema";
-            // 
+            this.lblProblema.AutoSize = true;
+            this.lblProblema.Location = new System.Drawing.Point(30, 120);
+            this.lblProblema.Text = "Problema";
             // txtProblema
-            // 
-            txtProblema.Location = new Point(120, 158);
-            txtProblema.Multiline = true;
-            txtProblema.Size = new Size(580, 50);
-            txtProblema.Name = "txtProblema";
-            // 
+            this.txtProblema.Location = new System.Drawing.Point(120, 117);
+            this.txtProblema.Multiline = true;
+            this.txtProblema.Size = new System.Drawing.Size(560, 60);
+
             // lblServico
-            // 
-            lblServico.AutoSize = true;
-            lblServico.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblServico.Location = new Point(20, 220);
-            lblServico.Name = "lblServico";
-            lblServico.Size = new Size(64, 23);
-            lblServico.Text = "Serviço";
-            // 
+            this.lblServico.AutoSize = true;
+            this.lblServico.Location = new System.Drawing.Point(30, 190);
+            this.lblServico.Text = "Serviço";
             // txtServico
-            // 
-            txtServico.Location = new Point(120, 218);
-            txtServico.Multiline = true;
-            txtServico.Size = new Size(580, 50);
-            txtServico.Name = "txtServico";
-            // 
+            this.txtServico.Location = new System.Drawing.Point(120, 187);
+            this.txtServico.Multiline = true;
+            this.txtServico.Size = new System.Drawing.Size(560, 60);
+
             // lblData
-            // 
-            lblData.AutoSize = true;
-            lblData.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblData.Location = new Point(20, 280);
-            lblData.Name = "lblData";
-            lblData.Size = new Size(81, 23);
-            lblData.Text = "Data OS";
-            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(30, 260);
+            this.lblData.Text = "Data OS";
             // dtpData
-            // 
-            dtpData.Format = DateTimePickerFormat.Short;
-            dtpData.Location = new Point(120, 278);
-            dtpData.Size = new Size(200, 27);
-            dtpData.Name = "dtpData";
-            // 
-            // btnSalvar
-            // 
-            btnSalvar.BackColor = Color.FromArgb(192, 255, 192);
-            btnSalvar.Location = new Point(20, 320);
-            btnSalvar.Size = new Size(90, 35);
-            btnSalvar.Text = "Salvar";
-            btnSalvar.Click += btnSalvar_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.FromArgb(255, 255, 192);
-            btnEditar.Location = new Point(120, 320);
-            btnEditar.Size = new Size(90, 35);
-            btnEditar.Text = "Editar";
-            btnEditar.Click += btnEditar_Click;
-            // 
-            // btnExcluir
-            // 
-            btnExcluir.BackColor = Color.FromArgb(255, 192, 192);
-            btnExcluir.Location = new Point(220, 320);
-            btnExcluir.Size = new Size(90, 35);
-            btnExcluir.Text = "Excluir";
-            btnExcluir.Click += btnExcluir_Click;
-            // 
-            // dgvOS
-            // 
-            dgvOS.AllowUserToAddRows = false;
-            dgvOS.AllowUserToDeleteRows = false;
-            dgvOS.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvOS.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOS.Dock = DockStyle.Bottom;
-            dgvOS.Location = new Point(0, 380);
-            dgvOS.Size = new Size(800, 200);
-            dgvOS.Name = "dgvOS";
-            dgvOS.ReadOnly = true;
-            dgvOS.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // lblOS
-            // 
-            lblOS.Font = new System.Drawing.Font("Segoe UI", 16F);
-            lblOS.Location = new Point(20, 20);
-            lblOS.Size = new Size(500, 40);
-            lblOS.Text = "Emissão de Ordem de Serviço";
-            // 
-            // OS
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 580);
-            Controls.Add(lblOS);
-            Controls.Add(lblCpfCliente);
-            Controls.Add(txtCpfCliente);
-            Controls.Add(lblPlacaVeiculo);
-            Controls.Add(txtPlacaVeiculo);
-            Controls.Add(lblCpfFuncionario);
-            Controls.Add(txtCpfFuncionario);
-            Controls.Add(lblProblema);
-            Controls.Add(txtProblema);
-            Controls.Add(lblServico);
-            Controls.Add(txtServico);
-            Controls.Add(lblData);
-            Controls.Add(dtpData);
-            Controls.Add(btnSalvar);
-            Controls.Add(btnEditar);
-            Controls.Add(btnExcluir);
-            Controls.Add(dgvOS);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Controle de Ordens de Serviço";
-            Load += OS_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvOS).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(120, 257);
+            this.dtpData.Size = new System.Drawing.Size(220, 27);
+
+            // --------------------- BOTOES PRINCIPAIS ---------------------
+            this.btnSalvar.Location = new System.Drawing.Point(120, 310);
+            this.btnSalvar.Size = new System.Drawing.Size(100, 35);
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+
+            this.btnEditar.Location = new System.Drawing.Point(240, 310);
+            this.btnEditar.Size = new System.Drawing.Size(100, 35);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+
+            this.btnExcluir.Location = new System.Drawing.Point(360, 310);
+            this.btnExcluir.Size = new System.Drawing.Size(100, 35);
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+
+            this.btnFecharOS.Location = new System.Drawing.Point(480, 310);
+            this.btnFecharOS.Size = new System.Drawing.Size(120, 35);
+            this.btnFecharOS.Text = "Fechar OS";
+            this.btnFecharOS.Click += new System.EventHandler(this.btnFecharOS_Click);
+
+            // --------------------- DATAGRID ---------------------
+            this.dgvOS.Location = new System.Drawing.Point(30, 400);
+            this.dgvOS.Size = new System.Drawing.Size(650, 200);
+            this.dgvOS.ReadOnly = true;
+            this.dgvOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
+            // --------------------- FILTROS ---------------------
+            // lblFiltroCliente
+            this.lblFiltroCliente.AutoSize = true;
+            this.lblFiltroCliente.Location = new System.Drawing.Point(30, 620);
+            this.lblFiltroCliente.Text = "Cliente";
+            // cmbFiltroCliente
+            this.cmbFiltroCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltroCliente.Location = new System.Drawing.Point(90, 617);
+            this.cmbFiltroCliente.Size = new System.Drawing.Size(150, 28);
+
+            // lblFiltroVeiculo
+            this.lblFiltroVeiculo.AutoSize = true;
+            this.lblFiltroVeiculo.Location = new System.Drawing.Point(250, 620);
+            this.lblFiltroVeiculo.Text = "Veículo";
+            // cmbFiltroVeiculo
+            this.cmbFiltroVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltroVeiculo.Location = new System.Drawing.Point(310, 617);
+            this.cmbFiltroVeiculo.Size = new System.Drawing.Size(150, 28);
+
+            // lblFiltroStatus
+            this.lblFiltroStatus.AutoSize = true;
+            this.lblFiltroStatus.Location = new System.Drawing.Point(470, 620);
+            this.lblFiltroStatus.Text = "Status";
+            // cmbFiltroStatus
+            this.cmbFiltroStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltroStatus.Items.AddRange(new object[] { "Todas", "Aberta", "Fechada" });
+            this.cmbFiltroStatus.Location = new System.Drawing.Point(520, 617);
+            this.cmbFiltroStatus.Size = new System.Drawing.Size(100, 28);
+
+            // lblFiltroPeriodo
+            this.lblFiltroPeriodo.AutoSize = true;
+            this.lblFiltroPeriodo.Location = new System.Drawing.Point(30, 660);
+            this.lblFiltroPeriodo.Text = "Período";
+            // dtpFiltroInicio
+            this.dtpFiltroInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFiltroInicio.Location = new System.Drawing.Point(90, 655);
+            this.dtpFiltroInicio.Size = new System.Drawing.Size(120, 27);
+            // dtpFiltroFim
+            this.dtpFiltroFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFiltroFim.Location = new System.Drawing.Point(220, 655);
+            this.dtpFiltroFim.Size = new System.Drawing.Size(120, 27);
+
+            // btnFiltrar
+            this.btnFiltrar.Location = new System.Drawing.Point(360, 652);
+            this.btnFiltrar.Size = new System.Drawing.Size(100, 35);
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+
+            // --------------------- FORM ---------------------
+            this.ClientSize = new System.Drawing.Size(720, 720);
+            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.cmbCliente);
+            this.Controls.Add(this.lblVeiculo);
+            this.Controls.Add(this.cmbVeiculo);
+            this.Controls.Add(this.lblFuncionario);
+            this.Controls.Add(this.cmbFuncionario);
+            this.Controls.Add(this.lblProblema);
+            this.Controls.Add(this.txtProblema);
+            this.Controls.Add(this.lblServico);
+            this.Controls.Add(this.txtServico);
+            this.Controls.Add(this.lblData);
+            this.Controls.Add(this.dtpData);
+
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnFecharOS);
+
+            this.Controls.Add(this.dgvOS);
+
+            this.Controls.Add(this.lblFiltroCliente);
+            this.Controls.Add(this.cmbFiltroCliente);
+            this.Controls.Add(this.lblFiltroVeiculo);
+            this.Controls.Add(this.cmbFiltroVeiculo);
+            this.Controls.Add(this.lblFiltroStatus);
+            this.Controls.Add(this.cmbFiltroStatus);
+            this.Controls.Add(this.lblFiltroPeriodo);
+            this.Controls.Add(this.dtpFiltroInicio);
+            this.Controls.Add(this.dtpFiltroFim);
+            this.Controls.Add(this.btnFiltrar);
+
+            this.Name = "OS";
+            this.Text = "Ordem de Serviço";
+            this.Load += new System.EventHandler(this.OS_Load);
+
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Label lblVeiculo;
+        private System.Windows.Forms.Label lblFuncionario;
+        private System.Windows.Forms.Label lblProblema;
+        private System.Windows.Forms.Label lblServico;
+        private System.Windows.Forms.Label lblData;
+
+        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.ComboBox cmbVeiculo;
+        private System.Windows.Forms.ComboBox cmbFuncionario;
+
+        private System.Windows.Forms.TextBox txtProblema;
+        private System.Windows.Forms.TextBox txtServico;
+        private System.Windows.Forms.DateTimePicker dtpData;
+
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnFecharOS;
+        private System.Windows.Forms.Button btnFiltrar;
+
+        private System.Windows.Forms.DataGridView dgvOS;
+
+        // Filtros
+        private System.Windows.Forms.Label lblFiltroCliente;
+        private System.Windows.Forms.Label lblFiltroVeiculo;
+        private System.Windows.Forms.Label lblFiltroStatus;
+        private System.Windows.Forms.Label lblFiltroPeriodo;
+
+        private System.Windows.Forms.ComboBox cmbFiltroCliente;
+        private System.Windows.Forms.ComboBox cmbFiltroVeiculo;
+        private System.Windows.Forms.ComboBox cmbFiltroStatus;
+        private System.Windows.Forms.DateTimePicker dtpFiltroInicio;
+        private System.Windows.Forms.DateTimePicker dtpFiltroFim;
     }
-    #endregion
 }
