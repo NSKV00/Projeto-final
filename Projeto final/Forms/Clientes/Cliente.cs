@@ -229,7 +229,7 @@ namespace Projeto_final.Forms.Clientes
             {
                 using (var conexao = Conexao.ObterConexao())
                 {
-                    string checkOs = "SELECT id FROM os WHERE id_cliente = @id LIMIT 1";
+                    string checkOs = "SELECT id FROM os WHERE id = @id LIMIT 1";
                     using (var cmdCheck = new MySqlCommand(checkOs, conexao))
                     {
                         cmdCheck.Parameters.AddWithValue("@id", id);
@@ -259,6 +259,11 @@ namespace Projeto_final.Forms.Clientes
             {
                 MessageBox.Show($"Erro ao excluir cliente: {ex.Message}");
             }
+        }
+
+        private void Cliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

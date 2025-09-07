@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using SistemaDatabase.Conexoes;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Projeto_final.Forms.Funcionarios
@@ -10,28 +11,37 @@ namespace Projeto_final.Forms.Funcionarios
         public Funcionario()
         {
             InitializeComponent();
+            CarregarFuncionarios();
         }
 
         private bool ValidarCpf(string cpf)
         {
-            int[] multiplicador1 = { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] multiplicador2 = { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            string tempCpf, digito;
-            int soma, resto;
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            string tempCpf;
+            string digito;
+            int soma;
+            int resto;
 
             cpf = cpf.Trim().Replace(".", "").Replace("-", "");
             if (cpf.Length != 11) return false;
 
             tempCpf = cpf.Substring(0, 9);
             soma = 0;
-            for (int i = 0; i < 9; i++) soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+
             resto = soma % 11;
             resto = resto < 2 ? 0 : 11 - resto;
             digito = resto.ToString();
-            tempCpf += digito;
 
+            tempCpf += digito;
             soma = 0;
-            for (int i = 0; i < 10; i++) soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+
             resto = soma % 11;
             resto = resto < 2 ? 0 : 11 - resto;
             digito += resto.ToString();
@@ -39,38 +49,24 @@ namespace Projeto_final.Forms.Funcionarios
             return cpf.EndsWith(digito);
         }
 
-        private void Funcionario_Load(object sender, EventArgs e)
+        private bool CpfExistente(string cpf, int idAtual = 0)
         {
-            CarregarFuncionarios();
-        }
-
-        private void CarregarFuncionarios()
-        {
-            dgvFuncionarios.Rows.Clear();
             using (var conexao = Conexao.ObterConexao())
             {
-                string query = "SELECT id, nome, contato, cpf FROM funcionario";
+                string query = "SELECT id FROM funcionario WHERE cpf = @cpf AND id != @id";
                 using (var cmd = new MySqlCommand(query, conexao))
-                using (var reader = cmd.ExecuteReader())
                 {
-                    while (reader.Read())
+                    cmd.Parameters.AddWithValue("@cpf", cpf);
+                    cmd.Parameters.AddWithValue("@id", idAtual);
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        dgvFuncionarios.Rows.Add(reader.GetInt32("id"), reader.GetString("nome"), reader.GetString("contato"), reader.GetString("cpf"));
+                        return reader.HasRows;
                     }
                 }
             }
-
-            // Ajuste colunas
-            if (dgvFuncionarios.Columns.Count == 0)
-            {
-                dgvFuncionarios.Columns.Add("id", "ID");
-                dgvFuncionarios.Columns.Add("nome", "Nome");
-                dgvFuncionarios.Columns.Add("contato", "Contato");
-                dgvFuncionarios.Columns.Add("cpf", "CPF");
-            }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNome.Text) ||
                 string.IsNullOrWhiteSpace(txtContato.Text) ||
@@ -86,33 +82,75 @@ namespace Projeto_final.Forms.Funcionarios
                 return;
             }
 
-            using (var conexao = Conexao.ObterConexao())
+            if (CpfExistente(txtCpf.Text))
             {
-                string checkCpf = "SELECT COUNT(*) FROM funcionario WHERE cpf=@cpf";
-                using (var cmdCheck = new MySqlCommand(checkCpf, conexao))
+                MessageBox.Show("CPF já cadastrado.");
+                return;
+            }
+
+            try
+            {
+                using (var conexao = Conexao.ObterConexao())
                 {
-                    cmdCheck.Parameters.AddWithValue("@cpf", txtCpf.Text);
-                    int count = Convert.ToInt32(cmdCheck.ExecuteScalar());
-                    if (count > 0)
+                    string query = @"INSERT INTO funcionario (nome, contato, cpf, ativo) 
+                                     VALUES (@nome, @contato, @cpf, 'a')";
+
+                    using (var cmd = new MySqlCommand(query, conexao))
                     {
-                        MessageBox.Show("CPF já cadastrado.");
-                        return;
+                        cmd.Parameters.AddWithValue("@nome", txtNome.Text);
+                        cmd.Parameters.AddWithValue("@contato", txtContato.Text);
+                        cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
+                        cmd.ExecuteNonQuery();
                     }
                 }
 
-                string insert = "INSERT INTO funcionario (nome, contato, cpf) VALUES (@nome,@contato,@cpf)";
-                using (var cmd = new MySqlCommand(insert, conexao))
+                MessageBox.Show("Funcionário cadastrado com sucesso!");
+                LimparCampos();
+                CarregarFuncionarios();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao cadastrar funcionário: {ex.Message}");
+            }
+        }
+
+        private void CarregarFuncionarios()
+        {
+            try
+            {
+                using (var conexao = Conexao.ObterConexao())
                 {
-                    cmd.Parameters.AddWithValue("@nome", txtNome.Text);
-                    cmd.Parameters.AddWithValue("@contato", txtContato.Text);
-                    cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
-                    cmd.ExecuteNonQuery();
+                    string query = "SELECT id, nome, contato, cpf FROM funcionario WHERE ativo = 'a'";
+                    using (var adapter = new MySqlDataAdapter(query, conexao))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dgvFuncionarios.DataSource = dt;
+                        dgvFuncionarios.ClearSelection();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar funcionários: {ex.Message}");
+            }
+        }
 
-            MessageBox.Show("Funcionário cadastrado com sucesso!");
-            LimparCampos();
-            CarregarFuncionarios();
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtContato.Clear();
+            txtCpf.Clear();
+        }
+
+        private void dgvFuncionarios_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvFuncionarios.SelectedRows.Count > 0)
+            {
+                txtNome.Text = dgvFuncionarios.SelectedRows[0].Cells["nome"].Value.ToString();
+                txtContato.Text = dgvFuncionarios.SelectedRows[0].Cells["contato"].Value.ToString();
+                txtCpf.Text = dgvFuncionarios.SelectedRows[0].Cells["cpf"].Value.ToString();
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -125,22 +163,49 @@ namespace Projeto_final.Forms.Funcionarios
 
             int id = Convert.ToInt32(dgvFuncionarios.SelectedRows[0].Cells["id"].Value);
 
-            using (var conexao = Conexao.ObterConexao())
+            if (string.IsNullOrWhiteSpace(txtNome.Text) ||
+                string.IsNullOrWhiteSpace(txtContato.Text) ||
+                string.IsNullOrWhiteSpace(txtCpf.Text))
             {
-                string update = "UPDATE funcionario SET nome=@nome, contato=@contato, cpf=@cpf WHERE id=@id";
-                using (var cmd = new MySqlCommand(update, conexao))
-                {
-                    cmd.Parameters.AddWithValue("@nome", txtNome.Text);
-                    cmd.Parameters.AddWithValue("@contato", txtContato.Text);
-                    cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
-                    cmd.Parameters.AddWithValue("@id", id);
-                    cmd.ExecuteNonQuery();
-                }
+                MessageBox.Show("Preencha todos os campos.");
+                return;
             }
 
-            MessageBox.Show("Funcionário atualizado com sucesso!");
-            LimparCampos();
-            CarregarFuncionarios();
+            if (!ValidarCpf(txtCpf.Text))
+            {
+                MessageBox.Show("CPF inválido.");
+                return;
+            }
+
+            if (CpfExistente(txtCpf.Text, id))
+            {
+                MessageBox.Show("CPF já cadastrado em outro funcionário.");
+                return;
+            }
+
+            try
+            {
+                using (var conexao = Conexao.ObterConexao())
+                {
+                    string query = @"UPDATE funcionario SET nome=@nome, contato=@contato, cpf=@cpf WHERE id=@id";
+                    using (var cmd = new MySqlCommand(query, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@nome", txtNome.Text);
+                        cmd.Parameters.AddWithValue("@contato", txtContato.Text);
+                        cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Funcionário atualizado com sucesso!");
+                LimparCampos();
+                CarregarFuncionarios();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao atualizar funcionário: {ex.Message}");
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -153,38 +218,45 @@ namespace Projeto_final.Forms.Funcionarios
 
             int id = Convert.ToInt32(dgvFuncionarios.SelectedRows[0].Cells["id"].Value);
 
-            using (var conexao = Conexao.ObterConexao())
+            try
             {
-                // Verifica vínculo com OS
-                string checkOS = "SELECT COUNT(*) FROM os WHERE id_funcionario=@id";
-                using (var cmdCheck = new MySqlCommand(checkOS, conexao))
+                using (var conexao = Conexao.ObterConexao())
                 {
-                    cmdCheck.Parameters.AddWithValue("@id", id);
-                    int count = Convert.ToInt32(cmdCheck.ExecuteScalar());
-                    if (count > 0)
+                    string checkOs = "SELECT id FROM os WHERE funcionario = @id LIMIT 1";
+                    using (var cmdCheck = new MySqlCommand(checkOs, conexao))
                     {
-                        MessageBox.Show("Não é possível excluir. Funcionário vinculado a uma OS.");
-                        return;
+                        cmdCheck.Parameters.AddWithValue("@id", id);
+                        using (var reader = cmdCheck.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                MessageBox.Show("Não é possível excluir funcionário vinculado a uma OS.");
+                                return;
+                            }
+                        }
+                    }
+
+                    string deleteQuery = "DELETE FROM funcionario WHERE id=@id";
+                    using (var cmd = new MySqlCommand(deleteQuery, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
                     }
                 }
 
-                string delete = "DELETE FROM funcionario WHERE id=@id";
-                using (var cmd = new MySqlCommand(delete, conexao))
-                {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    cmd.ExecuteNonQuery();
-                }
+                MessageBox.Show("Funcionário excluído com sucesso!");
+                LimparCampos();
+                CarregarFuncionarios();
             }
-
-            MessageBox.Show("Funcionário excluído com sucesso!");
-            CarregarFuncionarios();
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao excluir funcionário: {ex.Message}");
+            }
         }
 
-        private void LimparCampos()
+        private void Funcionario_Load(object sender, EventArgs e)
         {
-            txtNome.Clear();
-            txtContato.Clear();
-            txtCpf.Clear();
+
         }
     }
 }

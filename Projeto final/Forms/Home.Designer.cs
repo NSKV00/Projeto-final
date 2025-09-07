@@ -62,20 +62,6 @@
             painelLateral.Size = new Size(220, 563);
             painelLateral.TabIndex = 0;
             // 
-            // btnVerCliente
-            // 
-            btnVerCliente.Dock = DockStyle.Top;
-            btnVerCliente.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
-            btnVerCliente.FlatStyle = FlatStyle.Flat;
-            btnVerCliente.Location = new Point(0, 280);
-            btnVerCliente.Name = "btnVerCliente";
-            btnVerCliente.Padding = new Padding(11, 0, 0, 0);
-            btnVerCliente.Size = new Size(220, 50);
-            btnVerCliente.TabIndex = 5;
-            btnVerCliente.Text = "Ver Clientes";
-            btnVerCliente.UseVisualStyleBackColor = true;
-            btnVerCliente.Click += btnaleatorio_Click;
-            // 
             // btnFuncionarios
             // 
             btnFuncionarios.Dock = DockStyle.Top;

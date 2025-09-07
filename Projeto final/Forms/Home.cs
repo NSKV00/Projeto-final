@@ -114,9 +114,5 @@ namespace Projeto_final
 
         }
 
-        private void btnaleatorio_Click(object sender, EventArgs e)
-        {
-            OpenForm(new Forms.Clientes.VerCliente(), sender);
-        }
     }
 }

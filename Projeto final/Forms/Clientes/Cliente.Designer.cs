@@ -31,9 +31,8 @@
             btnEditar = new Button();
             btnExcluir = new Button();
             dgvClientes = new DataGridView();
-
             panelContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // panelContainer
@@ -85,6 +84,7 @@
             // 
             txtNome.Font = new Font("Segoe UI", 10F);
             txtNome.Location = new Point(20, 75);
+            txtNome.Name = "txtNome";
             txtNome.Size = new Size(200, 25);
             txtNome.TabIndex = 2;
             // 
@@ -102,25 +102,9 @@
             // 
             txtCpf.Font = new Font("Segoe UI", 10F);
             txtCpf.Location = new Point(240, 75);
+            txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(150, 25);
             txtCpf.TabIndex = 4;
-            // 
-            // lblTelefone
-            // 
-            lblTelefone.AutoSize = true;
-            lblTelefone.Font = new Font("Segoe UI", 10F);
-            lblTelefone.Location = new Point(410, 55);
-            lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new Size(62, 19);
-            lblTelefone.TabIndex = 5;
-            lblTelefone.Text = "Telefone:";
-            // 
-            // txtTelefone
-            // 
-            txtTelefone.Font = new Font("Segoe UI", 10F);
-            txtTelefone.Location = new Point(410, 75);
-            txtTelefone.Size = new Size(120, 25);
-            txtTelefone.TabIndex = 6;
             // 
             // lblCep
             // 
@@ -136,17 +120,38 @@
             // 
             txtCep.Font = new Font("Segoe UI", 10F);
             txtCep.Location = new Point(550, 75);
+            txtCep.Name = "txtCep";
             txtCep.Size = new Size(120, 25);
             txtCep.TabIndex = 8;
+            // 
+            // lblTelefone
+            // 
+            lblTelefone.AutoSize = true;
+            lblTelefone.Font = new Font("Segoe UI", 10F);
+            lblTelefone.Location = new Point(410, 55);
+            lblTelefone.Name = "lblTelefone";
+            lblTelefone.Size = new Size(62, 19);
+            lblTelefone.TabIndex = 5;
+            lblTelefone.Text = "Telefone:";
+            // 
+            // txtTelefone
+            // 
+            txtTelefone.Font = new Font("Segoe UI", 10F);
+            txtTelefone.Location = new Point(410, 75);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(120, 25);
+            txtTelefone.TabIndex = 6;
             // 
             // btnCadastrar
             // 
             btnCadastrar.BackColor = Color.FromArgb(72, 168, 255);
             btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.ForeColor = Color.White;
             btnCadastrar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCadastrar.ForeColor = Color.White;
             btnCadastrar.Location = new Point(20, 110);
+            btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(200, 30);
+            btnCadastrar.TabIndex = 9;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
@@ -155,10 +160,12 @@
             // 
             btnEditar.BackColor = Color.FromArgb(255, 193, 7);
             btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.ForeColor = Color.White;
             btnEditar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnEditar.ForeColor = Color.White;
             btnEditar.Location = new Point(240, 110);
+            btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(200, 30);
+            btnEditar.TabIndex = 10;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
@@ -167,25 +174,27 @@
             // 
             btnExcluir.BackColor = Color.FromArgb(220, 53, 69);
             btnExcluir.FlatStyle = FlatStyle.Flat;
-            btnExcluir.ForeColor = Color.White;
             btnExcluir.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnExcluir.ForeColor = Color.White;
             btnExcluir.Location = new Point(460, 110);
+            btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(200, 30);
+            btnExcluir.TabIndex = 11;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
             // 
             // dgvClientes
             // 
-            dgvClientes.Location = new Point(20, 150);
-            dgvClientes.Size = new Size(650, 220);
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvClientes.Location = new Point(20, 150);
             dgvClientes.MultiSelect = false;
+            dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
+            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvClientes.Size = new Size(650, 220);
             dgvClientes.TabIndex = 12;
             dgvClientes.SelectionChanged += dgvClientes_SelectionChanged;
-
             // 
             // Cliente
             // 
@@ -196,12 +205,13 @@
             Controls.Add(panelContainer);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            StartPosition = FormStartPosition.CenterScreen;
             Name = "Cliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Clientes";
+            Load += Cliente_Load;
             panelContainer.ResumeLayout(false);
             panelContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
         }
 
