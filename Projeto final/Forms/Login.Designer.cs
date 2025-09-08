@@ -46,9 +46,10 @@ namespace Projeto_final
             // btnLogin
             // 
             btnLogin.Anchor = AnchorStyles.None;
-            btnLogin.Location = new Point(358, 302);
+            btnLogin.Location = new Point(251, 181);
+            btnLogin.Margin = new Padding(2, 2, 2, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(112, 34);
+            btnLogin.Size = new Size(78, 20);
             btnLogin.TabIndex = 10;
             btnLogin.Text = "login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -58,9 +59,10 @@ namespace Projeto_final
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(257, 187);
+            label2.Location = new Point(180, 112);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(58, 25);
+            label2.Size = new Size(38, 15);
             label2.TabIndex = 9;
             label2.Text = "senha";
             // 
@@ -68,18 +70,20 @@ namespace Projeto_final
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(272, 104);
+            label1.Location = new Point(190, 62);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(58, 25);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 8;
             label1.Text = "nome";
             // 
             // imputSenha
             // 
             imputSenha.Anchor = AnchorStyles.None;
-            imputSenha.Location = new Point(233, 236);
+            imputSenha.Location = new Point(163, 142);
+            imputSenha.Margin = new Padding(2, 2, 2, 2);
             imputSenha.Name = "imputSenha";
-            imputSenha.Size = new Size(354, 31);
+            imputSenha.Size = new Size(249, 23);
             imputSenha.TabIndex = 7;
             imputSenha.UseSystemPasswordChar = true;
             imputSenha.TextChanged += imputSenha_TextChanged;
@@ -87,9 +91,10 @@ namespace Projeto_final
             // imputNome
             // 
             imputNome.Anchor = AnchorStyles.None;
-            imputNome.Location = new Point(233, 132);
+            imputNome.Location = new Point(163, 79);
+            imputNome.Margin = new Padding(2, 2, 2, 2);
             imputNome.Name = "imputNome";
-            imputNome.Size = new Size(354, 31);
+            imputNome.Size = new Size(249, 23);
             imputNome.TabIndex = 6;
             imputNome.TextChanged += imputNome_TextChanged;
             // 
@@ -102,20 +107,23 @@ namespace Projeto_final
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(btnLogin);
-            panel1.Location = new Point(40, 38);
+            panel1.Location = new Point(28, 23);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(909, 477);
+            panel1.Size = new Size(636, 286);
             panel1.TabIndex = 11;
             // 
-            // Form2
+            // Login
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
-            ClientSize = new Size(985, 545);
+            ClientSize = new Size(690, 327);
             Controls.Add(panel1);
-            Name = "Form2";
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "Login";
             Text = "Form2";
+            Load += Login_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

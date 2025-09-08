@@ -111,6 +111,11 @@ namespace Projeto_final
             else
                 this.WindowState = FormWindowState.Normal;
         }
+
+        private void Home_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
