@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using SistemaDatabase.Conexoes;
-//using SistemaFarmacia.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,6 +58,11 @@ namespace Projeto_final
                     }
                 }
             }
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
 
         }
     }
