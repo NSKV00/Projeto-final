@@ -2,15 +2,8 @@
 {
     partial class Funcionario
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -24,111 +17,195 @@
 
         private void InitializeComponent()
         {
-            labelTitulo = new Label();
-            labelNome = new Label();
-            labelContato = new Label();
-            labelCpf = new Label();
+            panelContainer = new Panel();
+            lblTitulo = new Label();
+            lblNome = new Label();
             txtNome = new TextBox();
+            lblContato = new Label();
             txtContato = new TextBox();
+            lblCpf = new Label();
             txtCpf = new TextBox();
-            btnSalvar = new Button();
+            btnCadastrar = new Button();
+            btnEditar = new Button();
+            btnExcluir = new Button();
+            dgvFuncionarios = new DataGridView();
+            panelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvFuncionarios).BeginInit();
             SuspendLayout();
             // 
-            // labelTitulo
+            // panelContainer
             // 
-            labelTitulo.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTitulo.Location = new Point(220, 20);
-            labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(336, 46);
-            labelTitulo.TabIndex = 0;
-            labelTitulo.Text = "Cadastro de Funcionários";
+            panelContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelContainer.BackColor = Color.FromArgb(245, 245, 245);
+            panelContainer.BorderStyle = BorderStyle.FixedSingle;
+            panelContainer.Controls.Add(lblTitulo);
+            panelContainer.Controls.Add(lblNome);
+            panelContainer.Controls.Add(txtNome);
+            panelContainer.Controls.Add(lblContato);
+            panelContainer.Controls.Add(txtContato);
+            panelContainer.Controls.Add(lblCpf);
+            panelContainer.Controls.Add(txtCpf);
+            panelContainer.Controls.Add(btnCadastrar);
+            panelContainer.Controls.Add(btnEditar);
+            panelContainer.Controls.Add(btnExcluir);
+            panelContainer.Controls.Add(dgvFuncionarios);
+            panelContainer.Location = new Point(12, 12);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Padding = new Padding(12);
+            panelContainer.Size = new Size(700, 400);
+            panelContainer.TabIndex = 0;
             // 
-            // labelNome
+            // lblTitulo
             // 
-            labelNome.AutoSize = true;
-            labelNome.Location = new Point(120, 110);
-            labelNome.Name = "labelNome";
-            labelNome.Size = new Size(62, 25);
-            labelNome.TabIndex = 1;
-            labelNome.Text = "Nome:";
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(33, 37, 41);
+            lblTitulo.Location = new Point(200, 10);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(300, 30);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Cadastro de Funcionários";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // labelContato
+            // lblNome
             // 
-            labelContato.AutoSize = true;
-            labelContato.Location = new Point(120, 190);
-            labelContato.Name = "labelContato";
-            labelContato.Size = new Size(76, 25);
-            labelContato.TabIndex = 2;
-            labelContato.Text = "Contato:";
-            // 
-            // labelCpf
-            // 
-            labelCpf.AutoSize = true;
-            labelCpf.Location = new Point(120, 270);
-            labelCpf.Name = "labelCpf";
-            labelCpf.Size = new Size(42, 25);
-            labelCpf.TabIndex = 3;
-            labelCpf.Text = "CPF:";
+            lblNome.AutoSize = true;
+            lblNome.Font = new Font("Segoe UI", 10F);
+            lblNome.Location = new Point(20, 55);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(49, 19);
+            lblNome.TabIndex = 1;
+            lblNome.Text = "Nome:";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(220, 110);
+            txtNome.Font = new Font("Segoe UI", 10F);
+            txtNome.Location = new Point(20, 75);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(250, 31);
-            txtNome.TabIndex = 4;
+            txtNome.Size = new Size(200, 25);
+            txtNome.TabIndex = 2;
+            // 
+            // lblContato
+            // 
+            lblContato.AutoSize = true;
+            lblContato.Font = new Font("Segoe UI", 10F);
+            lblContato.Location = new Point(240, 55);
+            lblContato.Name = "lblContato";
+            lblContato.Size = new Size(62, 19);
+            lblContato.TabIndex = 3;
+            lblContato.Text = "Contato:";
             // 
             // txtContato
             // 
-            txtContato.Location = new Point(220, 190);
+            txtContato.Font = new Font("Segoe UI", 10F);
+            txtContato.Location = new Point(240, 75);
             txtContato.Name = "txtContato";
-            txtContato.Size = new Size(250, 31);
-            txtContato.TabIndex = 5;
+            txtContato.Size = new Size(150, 25);
+            txtContato.TabIndex = 4;
+            // 
+            // lblCpf
+            // 
+            lblCpf.AutoSize = true;
+            lblCpf.Font = new Font("Segoe UI", 10F);
+            lblCpf.Location = new Point(410, 55);
+            lblCpf.Name = "lblCpf";
+            lblCpf.Size = new Size(36, 19);
+            lblCpf.TabIndex = 5;
+            lblCpf.Text = "CPF:";
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(220, 270);
+            txtCpf.Font = new Font("Segoe UI", 10F);
+            txtCpf.Location = new Point(410, 75);
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(250, 31);
+            txtCpf.Size = new Size(150, 25);
             txtCpf.TabIndex = 6;
             // 
-            // btnSalvar
+            // btnCadastrar
             // 
-            btnSalvar.Location = new Point(220, 340);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(250, 40);
-            btnSalvar.TabIndex = 7;
-            btnSalvar.Text = "Cadastrar Funcionário";
-            btnSalvar.UseVisualStyleBackColor = true;
-            btnSalvar.Click += btnSalvar_Click;
+            btnCadastrar.BackColor = Color.FromArgb(72, 168, 255);
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCadastrar.ForeColor = Color.White;
+            btnCadastrar.Location = new Point(20, 110);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(180, 30);
+            btnCadastrar.TabIndex = 7;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.FromArgb(255, 193, 7);
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Location = new Point(220, 110);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(180, 30);
+            btnEditar.TabIndex = 8;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.BackColor = Color.FromArgb(220, 53, 69);
+            btnExcluir.FlatStyle = FlatStyle.Flat;
+            btnExcluir.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnExcluir.ForeColor = Color.White;
+            btnExcluir.Location = new Point(420, 110);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(180, 30);
+            btnExcluir.TabIndex = 9;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // dgvFuncionarios
+            // 
+            dgvFuncionarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvFuncionarios.Location = new Point(20, 150);
+            dgvFuncionarios.MultiSelect = false;
+            dgvFuncionarios.Name = "dgvFuncionarios";
+            dgvFuncionarios.ReadOnly = true;
+            dgvFuncionarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvFuncionarios.Size = new Size(650, 220);
+            dgvFuncionarios.TabIndex = 10;
+            dgvFuncionarios.SelectionChanged += dgvFuncionarios_SelectionChanged;
             // 
             // Funcionario
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 450);
-            Controls.Add(btnSalvar);
-            Controls.Add(txtCpf);
-            Controls.Add(txtContato);
-            Controls.Add(txtNome);
-            Controls.Add(labelCpf);
-            Controls.Add(labelContato);
-            Controls.Add(labelNome);
-            Controls.Add(labelTitulo);
+            BackColor = Color.White;
+            ClientSize = new Size(730, 430);
+            Controls.Add(panelContainer);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Funcionario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Funcionários";
+            Load += Funcionario_Load;
+            panelContainer.ResumeLayout(false);
+            panelContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvFuncionarios).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label labelTitulo;
-        private Label labelNome;
-        private Label labelContato;
-        private Label labelCpf;
+        private Panel panelContainer;
+        private Label lblTitulo;
+        private Label lblNome;
+        private Label lblContato;
+        private Label lblCpf;
         private TextBox txtNome;
         private TextBox txtContato;
         private TextBox txtCpf;
-        private Button btnSalvar;
+        private Button btnCadastrar;
+        private Button btnEditar;
+        private Button btnExcluir;
+        private DataGridView dgvFuncionarios;
     }
 }

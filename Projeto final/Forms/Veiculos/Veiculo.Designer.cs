@@ -1,224 +1,248 @@
-﻿//namespace Projeto_final.Forms.Veiculos
-//{
-//    partial class Veiculo
-//    {
-//        /// <summary>
-//        /// Required designer variable.
-//        /// </summary>
-//        private System.ComponentModel.IContainer components = null;
-
-//        /// <summary>
-//        /// Clean up any resources being used.
-//        /// </summary>
-//        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-//        protected override void Dispose(bool disposing)
-//        {
-//            if (disposing && (components != null))
-//            {
-//                components.Dispose();
-//            }
-//            base.Dispose(disposing);
-//        }
-
-//        #region Windows Form Designer generated code
-
-//        /// <summary>
-//        /// Required method for Designer support - do not modify
-//        /// the contents of this method with the code editor.
-//        /// </summary>
-//        private void InitializeComponent()
-//        {
-//            this.components = new System.ComponentModel.Container();
-//            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-//            this.ClientSize = new System.Drawing.Size(800, 450);
-//            this.Text = "Veiculo";
-//        }
-
-//        #endregion
-//    }
-//}
-using static System.Net.Mime.MediaTypeNames;
-using System.Xml.Linq;
-
-namespace Projeto_final.Forms.Veiculos
+﻿namespace Projeto_final.Forms.Veiculos
 {
     partial class Veiculo
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            panelContainer = new Panel();
+            lblTitulo = new Label();
+
+            lblCpfCliente = new Label();
             Textnamecliente = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
+
+            lblMarca = new Label();
             Textmarca = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
+
+            lblModelo = new Label();
             Textmodelo = new TextBox();
+
+            lblPlaca = new Label();
             Textplaca = new TextBox();
-            label5 = new Label();
+
+            lblAno = new Label();
             Textanodefab = new TextBox();
+
             btnSalvar = new Button();
-            button1 = new Button();
+            btnEditar = new Button();
+            btnExcluir = new Button();
+
+            dgvVeiculos = new DataGridView();
+
+            panelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvVeiculos).BeginInit();
             SuspendLayout();
+
+            // 
+            // panelContainer
+            // 
+            panelContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelContainer.BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
+            panelContainer.BorderStyle = BorderStyle.FixedSingle;
+            panelContainer.Controls.Add(lblTitulo);
+
+            panelContainer.Controls.Add(lblCpfCliente);
+            panelContainer.Controls.Add(Textnamecliente);
+
+            panelContainer.Controls.Add(lblMarca);
+            panelContainer.Controls.Add(Textmarca);
+
+            panelContainer.Controls.Add(lblModelo);
+            panelContainer.Controls.Add(Textmodelo);
+
+            panelContainer.Controls.Add(lblPlaca);
+            panelContainer.Controls.Add(Textplaca);
+
+            panelContainer.Controls.Add(lblAno);
+            panelContainer.Controls.Add(Textanodefab);
+
+            panelContainer.Controls.Add(btnSalvar);
+            panelContainer.Controls.Add(btnEditar);
+            panelContainer.Controls.Add(btnExcluir);
+
+            panelContainer.Controls.Add(dgvVeiculos);
+
+            panelContainer.Location = new System.Drawing.Point(10, 10);
+            panelContainer.Size = new System.Drawing.Size(760, 400);
+            panelContainer.Padding = new Padding(10);
+
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            lblTitulo.ForeColor = System.Drawing.Color.FromArgb(33, 37, 41);
+            lblTitulo.Location = new System.Drawing.Point(200, 10);
+            lblTitulo.Size = new System.Drawing.Size(350, 40);
+            lblTitulo.Text = "Cadastro de Veículos";
+            lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+            // 
+            // lblCpfCliente
+            // 
+            lblCpfCliente.AutoSize = true;
+            lblCpfCliente.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblCpfCliente.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblCpfCliente.Location = new System.Drawing.Point(20, 70);
+            lblCpfCliente.Text = "CPF do Cliente:";
+
             // 
             // Textnamecliente
             // 
-            Textnamecliente.Location = new Point(181, 93);
-            Textnamecliente.Name = "Textnamecliente";
-            Textnamecliente.Size = new Size(156, 27);
-            Textnamecliente.TabIndex = 0;
+            Textnamecliente.Font = new System.Drawing.Font("Segoe UI", 10F);
+            Textnamecliente.Location = new System.Drawing.Point(20, 95);
+            Textnamecliente.Size = new System.Drawing.Size(180, 25);
+
             // 
-            // label1
+            // lblMarca
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(181, 58);
-            label1.Name = "label1";
-            label1.Size = new Size(138, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Cpf do proprietario";
-            label1.Click += label1_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(181, 148);
-            label2.Name = "label2";
-            label2.Size = new Size(110, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Marca do carro";
+            lblMarca.AutoSize = true;
+            lblMarca.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblMarca.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblMarca.Location = new System.Drawing.Point(220, 70);
+            lblMarca.Text = "Marca:";
+
             // 
             // Textmarca
             // 
-            Textmarca.Location = new Point(181, 171);
-            Textmarca.Name = "Textmarca";
-            Textmarca.Size = new Size(156, 27);
-            Textmarca.TabIndex = 3;
+            Textmarca.Font = new System.Drawing.Font("Segoe UI", 10F);
+            Textmarca.Location = new System.Drawing.Point(220, 95);
+            Textmarca.Size = new System.Drawing.Size(150, 25);
+
             // 
-            // label3
+            // lblModelo
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(181, 232);
-            label3.Name = "label3";
-            label3.Size = new Size(121, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Modelo do carro";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(521, 148);
-            label4.Name = "label4";
-            label4.Size = new Size(117, 20);
-            label4.TabIndex = 5;
-            label4.Text = "Placa do veículo";
+            lblModelo.AutoSize = true;
+            lblModelo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblModelo.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblModelo.Location = new System.Drawing.Point(400, 70);
+            lblModelo.Text = "Modelo:";
+
             // 
             // Textmodelo
             // 
-            Textmodelo.Location = new Point(181, 255);
-            Textmodelo.Name = "Textmodelo";
-            Textmodelo.Size = new Size(156, 27);
-            Textmodelo.TabIndex = 6;
+            Textmodelo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            Textmodelo.Location = new System.Drawing.Point(400, 95);
+            Textmodelo.Size = new System.Drawing.Size(150, 25);
+
+            // 
+            // lblPlaca
+            // 
+            lblPlaca.AutoSize = true;
+            lblPlaca.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblPlaca.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblPlaca.Location = new System.Drawing.Point(580, 70);
+            lblPlaca.Text = "Placa:";
+
             // 
             // Textplaca
             // 
-            Textplaca.Location = new Point(521, 171);
-            Textplaca.Name = "Textplaca";
-            Textplaca.Size = new Size(156, 27);
-            Textplaca.TabIndex = 7;
+            Textplaca.Font = new System.Drawing.Font("Segoe UI", 10F);
+            Textplaca.Location = new System.Drawing.Point(580, 95);
+            Textplaca.Size = new System.Drawing.Size(150, 25);
+
             // 
-            // label5
+            // lblAno
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(521, 58);
-            label5.Name = "label5";
-            label5.Size = new Size(131, 20);
-            label5.TabIndex = 8;
-            label5.Text = "Ano de fabricação";
+            lblAno.AutoSize = true;
+            lblAno.Font = new System.Drawing.Font("Segoe UI", 10F);
+            lblAno.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblAno.Location = new System.Drawing.Point(20, 135);
+            lblAno.Text = "Ano de Fabricação:";
+
             // 
             // Textanodefab
             // 
-            Textanodefab.Location = new Point(521, 93);
-            Textanodefab.Name = "Textanodefab";
-            Textanodefab.Size = new Size(156, 27);
-            Textanodefab.TabIndex = 9;
+            Textanodefab.Font = new System.Drawing.Font("Segoe UI", 10F);
+            Textanodefab.Location = new System.Drawing.Point(20, 160);
+            Textanodefab.Size = new System.Drawing.Size(180, 25);
+
             // 
-            // btnSalvar
+            // Botões
             // 
-            btnSalvar.BackColor = Color.DarkGray;
-            btnSalvar.Location = new Point(565, 255);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(112, 39);
-            btnSalvar.TabIndex = 10;
+            btnSalvar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            btnSalvar.BackColor = System.Drawing.Color.LightSteelBlue;
+            btnSalvar.Location = new System.Drawing.Point(220, 155);
+            btnSalvar.Size = new System.Drawing.Size(120, 30);
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = false;
-            btnSalvar.Click += btnSalvar_Click;
+
+            btnEditar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            btnEditar.BackColor = System.Drawing.Color.LightGreen;
+            btnEditar.Location = new System.Drawing.Point(360, 155);
+            btnEditar.Size = new System.Drawing.Size(120, 30);
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+
+            btnExcluir.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            btnExcluir.BackColor = System.Drawing.Color.IndianRed;
+            btnExcluir.Location = new System.Drawing.Point(500, 155);
+            btnExcluir.Size = new System.Drawing.Size(120, 30);
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+
             // 
-            // button1
+            // dgvVeiculos
             // 
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
+            dgvVeiculos.Location = new System.Drawing.Point(20, 210);
+            dgvVeiculos.Size = new System.Drawing.Size(710, 170);
+            dgvVeiculos.ReadOnly = true;
+            dgvVeiculos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvVeiculos.MultiSelect = false;
+            dgvVeiculos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             // 
-            // CadastroCarros
+            // Veiculo Form
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1367, 499);
-            Controls.Add(button1);
-            Controls.Add(btnSalvar);
-            Controls.Add(Textanodefab);
-            Controls.Add(label5);
-            Controls.Add(Textplaca);
-            Controls.Add(Textmodelo);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(Textmarca);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(Textnamecliente);
-            Name = "CadastroCarros";
-            Text = "Form1";
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(780, 420);
+            Controls.Add(panelContainer);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "Veiculo";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cadastro de Veículos";
+
+            panelContainer.ResumeLayout(false);
+            panelContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvVeiculos).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
+        private Panel panelContainer;
+        private Label lblTitulo;
+
+        private Label lblCpfCliente;
         private TextBox Textnamecliente;
-        private Label label1;
-        private Label label2;
+
+        private Label lblMarca;
         private TextBox Textmarca;
-        private Label label3;
-        private Label label4;
+
+        private Label lblModelo;
         private TextBox Textmodelo;
+
+        private Label lblPlaca;
         private TextBox Textplaca;
-        private Label label5;
+
+        private Label lblAno;
         private TextBox Textanodefab;
+
         private Button btnSalvar;
-        private Button button1;
+        private Button btnEditar;
+        private Button btnExcluir;
+
+        private DataGridView dgvVeiculos;
     }
 }

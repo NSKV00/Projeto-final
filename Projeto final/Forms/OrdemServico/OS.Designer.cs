@@ -1,56 +1,4 @@
-﻿//namespace Projeto_final.Forms.OrdemServico
-//{
-//    partial class OS
-//    {
-//        /// <summary>
-//        /// Required designer variable.
-//        /// </summary>
-//        private System.ComponentModel.IContainer components = null;
-
-//        /// <summary>
-//        /// Clean up any resources being used.
-//        /// </summary>
-//        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-//        protected override void Dispose(bool disposing)
-//        {
-//            if (disposing && (components != null))
-//            {
-//                components.Dispose();
-//            }
-//            base.Dispose(disposing);
-//        }
-
-//        #region Windows Form Designer generated code
-
-//        /// <summary>
-//        /// Required method for Designer support - do not modify
-//        /// the contents of this method with the code editor.
-//        /// </summary>
-//        private void InitializeComponent()
-//        {
-//            SuspendLayout();
-//            // 
-//            // OS
-//            // 
-//            AutoScaleDimensions = new SizeF(10F, 25F);
-//            AutoScaleMode = AutoScaleMode.Font;
-//            ClientSize = new Size(800, 450);
-//            Name = "OS";
-//            Text = "OS";
-//            Load += OS_Load;
-//            ResumeLayout(false);
-//        }
-
-//        #endregion
-//    }
-//}
-
-
-using static System.Net.Mime.MediaTypeNames;
-using System.Drawing.Printing;
-using System.Xml.Linq;
-
-namespace Projeto_final.Forms.OrdemServico
+﻿namespace Projeto_final.Forms.OrdemServico
 {
     partial class OS
     {
@@ -65,279 +13,256 @@ namespace Projeto_final.Forms.OrdemServico
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código gerado pelo Windows Form Designer
 
         private void InitializeComponent()
         {
-            lblCliente = new Label();
-            txtCliente = new TextBox();
-            lblData = new Label();
-            dtpData = new DateTimePicker();
-            lblDescricao = new Label();
-            txtDescricao = new TextBox();
-            lblValor = new Label();
-            numValor = new NumericUpDown();
-            lblStatus = new Label();
-            cmbStatus = new ComboBox();
-            btnSalvar = new Button();
-            btnExcluir = new Button();
-            lblLista = new Label();
-            dgvOS = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            btnEditar = new Button();
-            label1 = new Label();
-            lblOS = new Label();
-            ((System.ComponentModel.ISupportInitialize)numValor).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvOS).BeginInit();
-            SuspendLayout();
-            // 
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblVeiculo = new System.Windows.Forms.Label();
+            this.lblFuncionario = new System.Windows.Forms.Label();
+            this.lblProblema = new System.Windows.Forms.Label();
+            this.lblServico = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.cmbVeiculo = new System.Windows.Forms.ComboBox();
+            this.cmbFuncionario = new System.Windows.Forms.ComboBox();
+
+            this.txtProblema = new System.Windows.Forms.TextBox();
+            this.txtServico = new System.Windows.Forms.TextBox();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
+
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnFecharOS = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+
+            this.dgvOS = new System.Windows.Forms.DataGridView();
+
+            // Filtros
+            this.lblFiltroCliente = new System.Windows.Forms.Label();
+            this.lblFiltroVeiculo = new System.Windows.Forms.Label();
+            this.lblFiltroStatus = new System.Windows.Forms.Label();
+            this.lblFiltroPeriodo = new System.Windows.Forms.Label();
+
+            this.cmbFiltroCliente = new System.Windows.Forms.ComboBox();
+            this.cmbFiltroVeiculo = new System.Windows.Forms.ComboBox();
+            this.cmbFiltroStatus = new System.Windows.Forms.ComboBox();
+            this.dtpFiltroInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpFiltroFim = new System.Windows.Forms.DateTimePicker();
+
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).BeginInit();
+            this.SuspendLayout();
+
+            // --------------------- CONTROLES PRINCIPAIS ---------------------
             // lblCliente
-            // 
-            lblCliente.AutoSize = true;
-            lblCliente.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblCliente.Location = new Point(17, 102);
-            lblCliente.Name = "lblCliente";
-            lblCliente.Size = new Size(63, 23);
-            lblCliente.TabIndex = 0;
-            lblCliente.Text = "Cliente";
-            // 
-            // txtCliente
-            // 
-            txtCliente.Location = new Point(86, 98);
-            txtCliente.Margin = new Padding(3, 4, 3, 4);
-            txtCliente.Name = "txtCliente";
-            txtCliente.Size = new Size(313, 27);
-            txtCliente.TabIndex = 1;
-            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(30, 30);
+            this.lblCliente.Text = "Cliente";
+            // cmbCliente
+            this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCliente.Location = new System.Drawing.Point(120, 27);
+            this.cmbCliente.Size = new System.Drawing.Size(220, 28);
+
+            // lblVeiculo
+            this.lblVeiculo.AutoSize = true;
+            this.lblVeiculo.Location = new System.Drawing.Point(380, 30);
+            this.lblVeiculo.Text = "Veículo";
+            // cmbVeiculo
+            this.cmbVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVeiculo.Location = new System.Drawing.Point(460, 27);
+            this.cmbVeiculo.Size = new System.Drawing.Size(220, 28);
+
+            // lblFuncionario
+            this.lblFuncionario.AutoSize = true;
+            this.lblFuncionario.Location = new System.Drawing.Point(30, 75);
+            this.lblFuncionario.Text = "Funcionário";
+            // cmbFuncionario
+            this.cmbFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFuncionario.Location = new System.Drawing.Point(120, 72);
+            this.cmbFuncionario.Size = new System.Drawing.Size(220, 28);
+
+            // lblProblema
+            this.lblProblema.AutoSize = true;
+            this.lblProblema.Location = new System.Drawing.Point(30, 120);
+            this.lblProblema.Text = "Problema";
+            // txtProblema
+            this.txtProblema.Location = new System.Drawing.Point(120, 117);
+            this.txtProblema.Multiline = true;
+            this.txtProblema.Size = new System.Drawing.Size(560, 60);
+
+            // lblServico
+            this.lblServico.AutoSize = true;
+            this.lblServico.Location = new System.Drawing.Point(30, 190);
+            this.lblServico.Text = "Serviço";
+            // txtServico
+            this.txtServico.Location = new System.Drawing.Point(120, 187);
+            this.txtServico.Multiline = true;
+            this.txtServico.Size = new System.Drawing.Size(560, 60);
+
             // lblData
-            // 
-            lblData.AutoSize = true;
-            lblData.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblData.Location = new Point(446, 102);
-            lblData.Name = "lblData";
-            lblData.Size = new Size(46, 23);
-            lblData.TabIndex = 2;
-            lblData.Text = "Data";
-            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(30, 260);
+            this.lblData.Text = "Data OS";
             // dtpData
-            // 
-            dtpData.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            dtpData.Format = DateTimePickerFormat.Short;
-            dtpData.Location = new Point(498, 98);
-            dtpData.Margin = new Padding(3, 4, 3, 4);
-            dtpData.Name = "dtpData";
-            dtpData.Size = new Size(212, 27);
-            dtpData.TabIndex = 3;
-            // 
-            // lblDescricao
-            // 
-            lblDescricao.AutoSize = true;
-            lblDescricao.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblDescricao.Location = new Point(17, 141);
-            lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(83, 23);
-            lblDescricao.TabIndex = 4;
-            lblDescricao.Text = "Descrição";
-            // 
-            // txtDescricao
-            // 
-            txtDescricao.Location = new Point(117, 141);
-            txtDescricao.Margin = new Padding(3, 4, 3, 4);
-            txtDescricao.Multiline = true;
-            txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(669, 30);
-            txtDescricao.TabIndex = 5;
-            // 
-            // lblValor
-            // 
-            lblValor.AutoSize = true;
-            lblValor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblValor.Location = new Point(17, 197);
-            lblValor.Name = "lblValor";
-            lblValor.Size = new Size(49, 23);
-            lblValor.TabIndex = 6;
-            lblValor.Text = "Valor";
-            // 
-            // numValor
-            // 
-            numValor.DecimalPlaces = 2;
-            numValor.Location = new Point(86, 197);
-            numValor.Margin = new Padding(3, 4, 3, 4);
-            numValor.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            numValor.Name = "numValor";
-            numValor.Size = new Size(269, 27);
-            numValor.TabIndex = 7;
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
-            lblStatus.Location = new Point(384, 198);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(56, 23);
-            lblStatus.TabIndex = 8;
-            lblStatus.Text = "Status";
-            // 
-            // cmbStatus
-            // 
-            cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbStatus.FormattingEnabled = true;
-            cmbStatus.Items.AddRange(new object[] { "Aberta", "Em Andamento", "Finalizada" });
-            cmbStatus.Location = new Point(458, 196);
-            cmbStatus.Margin = new Padding(3, 4, 3, 4);
-            cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(231, 28);
-            cmbStatus.TabIndex = 9;
-            // 
-            // btnSalvar
-            // 
-            btnSalvar.BackColor = Color.FromArgb(192, 255, 192);
-            btnSalvar.Location = new Point(17, 252);
-            btnSalvar.Margin = new Padding(3, 4, 3, 4);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(85, 38);
-            btnSalvar.TabIndex = 11;
-            btnSalvar.Text = "Salvar";
-            btnSalvar.UseVisualStyleBackColor = false;
-            btnSalvar.Click += btnSalvar_Click;
-            // 
-            // btnExcluir
-            // 
-            btnExcluir.BackColor = Color.FromArgb(255, 192, 192);
-            btnExcluir.Location = new Point(199, 252);
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(85, 38);
-            btnExcluir.TabIndex = 16;
-            btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = false;
-            btnExcluir.Click += btnExcluir_Click;
-            // 
-            // lblLista
-            // 
-            lblLista.AutoSize = true;
-            lblLista.Font = new System.Drawing.Font("Segoe UI", 15F);
-            lblLista.Location = new Point(17, 320);
-            lblLista.Name = "lblLista";
-            lblLista.Size = new Size(310, 35);
-            lblLista.TabIndex = 14;
-            lblLista.Text = "Lista de Ordens de Serviço";
-            // 
-            // dgvOS
-            // 
-            dgvOS.AllowUserToAddRows = false;
-            dgvOS.AllowUserToDeleteRows = false;
-            dgvOS.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvOS.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOS.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dgvOS.Dock = DockStyle.Bottom;
-            dgvOS.Location = new Point(0, 368);
-            dgvOS.Margin = new Padding(3, 4, 3, 4);
-            dgvOS.Name = "dgvOS";
-            dgvOS.ReadOnly = true;
-            dgvOS.RowHeadersVisible = false;
-            dgvOS.RowHeadersWidth = 51;
-            dgvOS.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvOS.Size = new Size(798, 184);
-            dgvOS.TabIndex = 15;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Id";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Cliente";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.FromArgb(255, 255, 192);
-            btnEditar.Location = new Point(108, 252);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(85, 38);
-            btnEditar.TabIndex = 17;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += btnEditar_Click;
-            // 
-            // label1
-            // 
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(100, 23);
-            label1.TabIndex = 0;
-            // 
-            // lblOS
-            // 
-            lblOS.Font = new System.Drawing.Font("Segoe UI", 20F);
-            lblOS.Location = new Point(15, 23);
-            lblOS.Name = "lblOS";
-            lblOS.Size = new Size(502, 47);
-            lblOS.TabIndex = 18;
-            lblOS.Text = "Emissão de Ordem de Serviço";
-            // 
-            // Form1
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(798, 552);
-            Controls.Add(lblOS);
-            Controls.Add(label1);
-            Controls.Add(dgvOS);
-            Controls.Add(lblLista);
-            Controls.Add(btnExcluir);
-            Controls.Add(btnEditar);
-            Controls.Add(btnSalvar);
-            Controls.Add(cmbStatus);
-            Controls.Add(lblStatus);
-            Controls.Add(numValor);
-            Controls.Add(lblValor);
-            Controls.Add(txtDescricao);
-            Controls.Add(lblDescricao);
-            Controls.Add(dtpData);
-            Controls.Add(lblData);
-            Controls.Add(txtCliente);
-            Controls.Add(lblCliente);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
-            MaximizeBox = false;
-            Name = "Form1";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Emissão e Controle de OS";
-            ((System.ComponentModel.ISupportInitialize)numValor).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvOS).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(120, 257);
+            this.dtpData.Size = new System.Drawing.Size(220, 27);
+
+            // --------------------- BOTOES PRINCIPAIS ---------------------
+            this.btnSalvar.Location = new System.Drawing.Point(120, 310);
+            this.btnSalvar.Size = new System.Drawing.Size(100, 35);
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+
+            this.btnEditar.Location = new System.Drawing.Point(240, 310);
+            this.btnEditar.Size = new System.Drawing.Size(100, 35);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+
+            this.btnExcluir.Location = new System.Drawing.Point(360, 310);
+            this.btnExcluir.Size = new System.Drawing.Size(100, 35);
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+
+            this.btnFecharOS.Location = new System.Drawing.Point(480, 310);
+            this.btnFecharOS.Size = new System.Drawing.Size(120, 35);
+            this.btnFecharOS.Text = "Fechar OS";
+            this.btnFecharOS.Click += new System.EventHandler(this.btnFecharOS_Click);
+
+            // --------------------- DATAGRID ---------------------
+            this.dgvOS.Location = new System.Drawing.Point(30, 400);
+            this.dgvOS.Size = new System.Drawing.Size(650, 200);
+            this.dgvOS.ReadOnly = true;
+            this.dgvOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
+            // --------------------- FILTROS ---------------------
+            // lblFiltroCliente
+            this.lblFiltroCliente.AutoSize = true;
+            this.lblFiltroCliente.Location = new System.Drawing.Point(30, 620);
+            this.lblFiltroCliente.Text = "Cliente";
+            // cmbFiltroCliente
+            this.cmbFiltroCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltroCliente.Location = new System.Drawing.Point(90, 617);
+            this.cmbFiltroCliente.Size = new System.Drawing.Size(150, 28);
+
+            // lblFiltroVeiculo
+            this.lblFiltroVeiculo.AutoSize = true;
+            this.lblFiltroVeiculo.Location = new System.Drawing.Point(250, 620);
+            this.lblFiltroVeiculo.Text = "Veículo";
+            // cmbFiltroVeiculo
+            this.cmbFiltroVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltroVeiculo.Location = new System.Drawing.Point(310, 617);
+            this.cmbFiltroVeiculo.Size = new System.Drawing.Size(150, 28);
+
+            // lblFiltroStatus
+            this.lblFiltroStatus.AutoSize = true;
+            this.lblFiltroStatus.Location = new System.Drawing.Point(470, 620);
+            this.lblFiltroStatus.Text = "Status";
+            // cmbFiltroStatus
+            this.cmbFiltroStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltroStatus.Items.AddRange(new object[] { "Todas", "Aberta", "Fechada" });
+            this.cmbFiltroStatus.Location = new System.Drawing.Point(520, 617);
+            this.cmbFiltroStatus.Size = new System.Drawing.Size(100, 28);
+
+            // lblFiltroPeriodo
+            this.lblFiltroPeriodo.AutoSize = true;
+            this.lblFiltroPeriodo.Location = new System.Drawing.Point(30, 660);
+            this.lblFiltroPeriodo.Text = "Período";
+            // dtpFiltroInicio
+            this.dtpFiltroInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFiltroInicio.Location = new System.Drawing.Point(90, 655);
+            this.dtpFiltroInicio.Size = new System.Drawing.Size(120, 27);
+            // dtpFiltroFim
+            this.dtpFiltroFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFiltroFim.Location = new System.Drawing.Point(220, 655);
+            this.dtpFiltroFim.Size = new System.Drawing.Size(120, 27);
+
+            // btnFiltrar
+            this.btnFiltrar.Location = new System.Drawing.Point(360, 652);
+            this.btnFiltrar.Size = new System.Drawing.Size(100, 35);
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+
+            // --------------------- FORM ---------------------
+            this.ClientSize = new System.Drawing.Size(720, 720);
+            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.cmbCliente);
+            this.Controls.Add(this.lblVeiculo);
+            this.Controls.Add(this.cmbVeiculo);
+            this.Controls.Add(this.lblFuncionario);
+            this.Controls.Add(this.cmbFuncionario);
+            this.Controls.Add(this.lblProblema);
+            this.Controls.Add(this.txtProblema);
+            this.Controls.Add(this.lblServico);
+            this.Controls.Add(this.txtServico);
+            this.Controls.Add(this.lblData);
+            this.Controls.Add(this.dtpData);
+
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnFecharOS);
+
+            this.Controls.Add(this.dgvOS);
+
+            this.Controls.Add(this.lblFiltroCliente);
+            this.Controls.Add(this.cmbFiltroCliente);
+            this.Controls.Add(this.lblFiltroVeiculo);
+            this.Controls.Add(this.cmbFiltroVeiculo);
+            this.Controls.Add(this.lblFiltroStatus);
+            this.Controls.Add(this.cmbFiltroStatus);
+            this.Controls.Add(this.lblFiltroPeriodo);
+            this.Controls.Add(this.dtpFiltroInicio);
+            this.Controls.Add(this.dtpFiltroFim);
+            this.Controls.Add(this.btnFiltrar);
+
+            this.Name = "OS";
+            this.Text = "Ordem de Serviço";
+            this.Load += new System.EventHandler(this.OS_Load);
+
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Label lblVeiculo;
+        private System.Windows.Forms.Label lblFuncionario;
+        private System.Windows.Forms.Label lblProblema;
+        private System.Windows.Forms.Label lblServico;
         private System.Windows.Forms.Label lblData;
+
+        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.ComboBox cmbVeiculo;
+        private System.Windows.Forms.ComboBox cmbFuncionario;
+
+        private System.Windows.Forms.TextBox txtProblema;
+        private System.Windows.Forms.TextBox txtServico;
         private System.Windows.Forms.DateTimePicker dtpData;
-        private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.NumericUpDown numValor;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.ComboBox cmbStatus;
+
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Label lblLista;
+        private System.Windows.Forms.Button btnFecharOS;
+        private System.Windows.Forms.Button btnFiltrar;
+
         private System.Windows.Forms.DataGridView dgvOS;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private Button btnEditar;
-        private Label label1;
-        private Label lblOS;
+
+        // Filtros
+        private System.Windows.Forms.Label lblFiltroCliente;
+        private System.Windows.Forms.Label lblFiltroVeiculo;
+        private System.Windows.Forms.Label lblFiltroStatus;
+        private System.Windows.Forms.Label lblFiltroPeriodo;
+
+        private System.Windows.Forms.ComboBox cmbFiltroCliente;
+        private System.Windows.Forms.ComboBox cmbFiltroVeiculo;
+        private System.Windows.Forms.ComboBox cmbFiltroStatus;
+        private System.Windows.Forms.DateTimePicker dtpFiltroInicio;
+        private System.Windows.Forms.DateTimePicker dtpFiltroFim;
     }
 }

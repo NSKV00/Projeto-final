@@ -1,60 +1,9 @@
-﻿//namespace Projeto_final.Forms.Clientes
-//{
-//    partial class Cliente
-//    {
-//        /// <summary>
-//        /// Required designer variable.
-//        /// </summary>
-//        private System.ComponentModel.IContainer components = null;
-
-//        /// <summary>
-//        /// Clean up any resources being used.
-//        /// </summary>
-//        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-//        protected override void Dispose(bool disposing)
-//        {
-//            if (disposing && (components != null))
-//            {
-//                components.Dispose();
-//            }
-//            base.Dispose(disposing);
-//        }
-
-//        #region Windows Form Designer generated code
-
-//        /// <summary>
-//        /// Required method for Designer support - do not modify
-//        /// the contents of this method with the code editor.
-//        /// </summary>
-//        private void InitializeComponent()
-//        {
-//            this.components = new System.ComponentModel.Container();
-//            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-//            this.ClientSize = new System.Drawing.Size(800, 450);
-//            this.Text = "Cliente";
-//        }
-
-//        #endregion
-//    }
-//}
-
-using Org.BouncyCastle.Asn1.Crmf;
-using System.Xml.Linq;
-using static System.Net.Mime.MediaTypeNames;
-
-namespace Projeto_final.Forms.Clientes
+﻿namespace Projeto_final.Forms.Clientes
 {
     partial class Cliente
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -66,153 +15,221 @@ namespace Projeto_final.Forms.Clientes
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            txtCpf = new TextBox();
+            panelContainer = new Panel();
+            lblTitulo = new Label();
+            lblNome = new Label();
             txtNome = new TextBox();
+            lblCpf = new Label();
+            txtCpf = new TextBox();
+            lblCep = new Label();
             txtCep = new TextBox();
+            lblTelefone = new Label();
             txtTelefone = new TextBox();
-            button1 = new Button();
-            label6 = new Label();
+            btnCadastrar = new Button();
+            btnEditar = new Button();
+            btnExcluir = new Button();
+            dgvClientes = new DataGridView();
+            panelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // panelContainer
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(146, 107);
-            label1.Name = "label1";
-            label1.Size = new Size(58, 25);
-            label1.TabIndex = 0;
-            label1.Text = "nome";
+            panelContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelContainer.BackColor = Color.FromArgb(245, 245, 245);
+            panelContainer.BorderStyle = BorderStyle.FixedSingle;
+            panelContainer.Controls.Add(lblTitulo);
+            panelContainer.Controls.Add(lblNome);
+            panelContainer.Controls.Add(txtNome);
+            panelContainer.Controls.Add(lblCpf);
+            panelContainer.Controls.Add(txtCpf);
+            panelContainer.Controls.Add(lblCep);
+            panelContainer.Controls.Add(txtCep);
+            panelContainer.Controls.Add(lblTelefone);
+            panelContainer.Controls.Add(txtTelefone);
+            panelContainer.Controls.Add(btnCadastrar);
+            panelContainer.Controls.Add(btnEditar);
+            panelContainer.Controls.Add(btnExcluir);
+            panelContainer.Controls.Add(dgvClientes);
+            panelContainer.Location = new Point(12, 12);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Padding = new Padding(12);
+            panelContainer.Size = new Size(700, 400);
+            panelContainer.TabIndex = 0;
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(100, 23);
-            label2.TabIndex = 12;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(33, 37, 41);
+            lblTitulo.Location = new Point(150, 10);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(400, 30);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Cadastro de Clientes";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lblNome
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(565, 270);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 25);
-            label3.TabIndex = 2;
-            label3.Text = "telefone";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(146, 270);
-            label4.Name = "label4";
-            label4.Size = new Size(40, 25);
-            label4.TabIndex = 3;
-            label4.Text = "cep";
-            // 
-            // label5
-            // 
-            label5.Font = new System.Drawing.Font("Segoe UI", 17F);
-            label5.Location = new Point(219, 19);
-            label5.Name = "label5";
-            label5.Size = new Size(336, 46);
-            label5.TabIndex = 4;
-            label5.Text = "Cadastro de clientes";
-            // A
-            // txtCpf
-            // 
-            txtCpf.Location = new Point(525, 155);
-            txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(150, 31);
-            txtCpf.TabIndex = 14;
-            txtCpf.TextChanged += txtCpf_TextChanged;
+            lblNome.AutoSize = true;
+            lblNome.Font = new Font("Segoe UI", 10F);
+            lblNome.Location = new Point(20, 55);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(49, 19);
+            lblNome.TabIndex = 1;
+            lblNome.Text = "Nome:";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(116, 155);
+            txtNome.Font = new Font("Segoe UI", 10F);
+            txtNome.Location = new Point(20, 75);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(150, 31);
-            txtNome.TabIndex = 10;
-            txtNome.TextChanged += txtNome_TextChanged;
+            txtNome.Size = new Size(200, 25);
+            txtNome.TabIndex = 2;
+            // 
+            // lblCpf
+            // 
+            lblCpf.AutoSize = true;
+            lblCpf.Font = new Font("Segoe UI", 10F);
+            lblCpf.Location = new Point(240, 55);
+            lblCpf.Name = "lblCpf";
+            lblCpf.Size = new Size(36, 19);
+            lblCpf.TabIndex = 3;
+            lblCpf.Text = "CPF:";
+            // 
+            // txtCpf
+            // 
+            txtCpf.Font = new Font("Segoe UI", 10F);
+            txtCpf.Location = new Point(240, 75);
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(150, 25);
+            txtCpf.TabIndex = 4;
+            // 
+            // lblCep
+            // 
+            lblCep.AutoSize = true;
+            lblCep.Font = new Font("Segoe UI", 10F);
+            lblCep.Location = new Point(550, 55);
+            lblCep.Name = "lblCep";
+            lblCep.Size = new Size(36, 19);
+            lblCep.TabIndex = 7;
+            lblCep.Text = "CEP:";
             // 
             // txtCep
             // 
-            txtCep.Location = new Point(116, 313);
+            txtCep.Font = new Font("Segoe UI", 10F);
+            txtCep.Location = new Point(550, 75);
             txtCep.Name = "txtCep";
-            txtCep.Size = new Size(150, 31);
-            txtCep.TabIndex = 7;
-            txtCep.TextChanged += txtCep_TextChanged;
+            txtCep.Size = new Size(120, 25);
+            txtCep.TabIndex = 8;
+            // 
+            // lblTelefone
+            // 
+            lblTelefone.AutoSize = true;
+            lblTelefone.Font = new Font("Segoe UI", 10F);
+            lblTelefone.Location = new Point(410, 55);
+            lblTelefone.Name = "lblTelefone";
+            lblTelefone.Size = new Size(62, 19);
+            lblTelefone.TabIndex = 5;
+            lblTelefone.Text = "Telefone:";
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(525, 313);
+            txtTelefone.Font = new Font("Segoe UI", 10F);
+            txtTelefone.Location = new Point(410, 75);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(150, 31);
-            txtTelefone.TabIndex = 8;
-            txtTelefone.TextChanged += txtTelefone_TextChanged;
+            txtTelefone.Size = new Size(120, 25);
+            txtTelefone.TabIndex = 6;
             // 
-            // button1
+            // btnCadastrar
             // 
-            button1.Location = new Point(291, 380);
-            button1.Name = "button1";
-            button1.Size = new Size(241, 34);
-            button1.TabIndex = 9;
-            button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnCadastrar.BackColor = Color.FromArgb(72, 168, 255);
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCadastrar.ForeColor = Color.White;
+            btnCadastrar.Location = new Point(20, 110);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(200, 30);
+            btnCadastrar.TabIndex = 9;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
-            // label6
+            // btnEditar
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(585, 112);
-            label6.Name = "label6";
-            label6.Size = new Size(37, 25);
-            label6.TabIndex = 13;
-            label6.Text = "cpf";
+            btnEditar.BackColor = Color.FromArgb(255, 193, 7);
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Location = new Point(240, 110);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(200, 30);
+            btnEditar.TabIndex = 10;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
-            // FormCadastroDeClientes
+            // btnExcluir
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            btnExcluir.BackColor = Color.FromArgb(220, 53, 69);
+            btnExcluir.FlatStyle = FlatStyle.Flat;
+            btnExcluir.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnExcluir.ForeColor = Color.White;
+            btnExcluir.Location = new Point(460, 110);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(200, 30);
+            btnExcluir.TabIndex = 11;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // dgvClientes
+            // 
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvClientes.Location = new Point(20, 150);
+            dgvClientes.MultiSelect = false;
+            dgvClientes.Name = "dgvClientes";
+            dgvClientes.ReadOnly = true;
+            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvClientes.Size = new Size(650, 220);
+            dgvClientes.TabIndex = 12;
+            dgvClientes.SelectionChanged += dgvClientes_SelectionChanged;
+            // 
+            // Cliente
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label6);
-            Controls.Add(button1);
-            Controls.Add(txtTelefone);
-            Controls.Add(txtCep);
-            Controls.Add(txtNome);
-            Controls.Add(txtCpf);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Name = "FormCadastroDeClientes";
-            Text = "FormCadastro";
+            BackColor = Color.White;
+            ClientSize = new Size(730, 430);
+            Controls.Add(panelContainer);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "Cliente";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cadastro de Clientes";
+            Load += Cliente_Load;
+            panelContainer.ResumeLayout(false);
+            panelContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private TextBox txtCpf;
+        private Panel panelContainer;
+        private Label lblTitulo;
+        private Label lblNome;
+        private Label lblCpf;
+        private Label lblCep;
+        private Label lblTelefone;
         private TextBox txtNome;
+        private TextBox txtCpf;
         private TextBox txtCep;
         private TextBox txtTelefone;
-        private Button button1;
-        private Label label6;
+        private Button btnCadastrar;
+        private Button btnEditar;
+        private Button btnExcluir;
+        private DataGridView dgvClientes;
     }
 }
