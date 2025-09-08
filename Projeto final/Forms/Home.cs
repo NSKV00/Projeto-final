@@ -10,15 +10,12 @@ namespace Projeto_final
     {
         //Fields
         private Button currentButton;
-        //private Random random;
         private Form activeForm;
-        //private int tempIndex;
 
         //Constructor
         public Home()
         {
             InitializeComponent();
-            CloseForm.Visible = false;
         }
 
         //Methods
@@ -30,7 +27,6 @@ namespace Projeto_final
                 {
                     DisableButton();
                     currentButton = (Button)btnSender;
-                    CloseForm.Visible = true;
                 }
             }
         }
@@ -64,16 +60,6 @@ namespace Projeto_final
             labelTitulo.Text = childForm.Text;
         }
 
-
-        //private void panel1_Paint_1(object sender, PaintEventArgs e)
-        //{
-        //    // Cria uma instância do novo formulário
-        //    var listarFuncionarios = new Funcionario();
-
-        //    // Exibe o novo formulário
-        //    listarFuncionarios.Show();
-        //}
-
         private void btnCliente_Click(object sender, EventArgs e)
         {
             OpenForm(new Forms.Clientes.Cliente(), sender);
@@ -106,7 +92,6 @@ namespace Projeto_final
             DisableButton();
             labelTitulo.Text = "HOME";
             currentButton = null;
-            CloseForm.Visible = false;
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -114,5 +99,18 @@ namespace Projeto_final
 
         }
 
+        private void BtnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnMaximize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
     }
 }
+

@@ -2,15 +2,8 @@
 {
     partial class Home
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,208 +15,188 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             painelLateral = new Panel();
-            btnVerCliente = new Button();
             btnFuncionarios = new Button();
             btnOS = new Button();
             btnVeiculos = new Button();
             btnCliente = new Button();
             painelLogo = new Panel();
             TituloLogo = new Label();
-            fileSystemWatcher1 = new FileSystemWatcher();
             painelTopo = new Panel();
-            CloseForm = new Button();
+            btnClose = new Button();
+            btnMinimize = new Button();
+            btnMaximize = new Button();
             labelTitulo = new Label();
             painelDesktop = new Panel();
-            painelLateral.SuspendLayout();
-            painelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
-            painelTopo.SuspendLayout();
-            SuspendLayout();
+
             // 
             // painelLateral
             // 
             painelLateral.BackColor = Color.FromArgb(51, 51, 76);
-            painelLateral.Controls.Add(btnVerCliente);
             painelLateral.Controls.Add(btnFuncionarios);
             painelLateral.Controls.Add(btnOS);
             painelLateral.Controls.Add(btnVeiculos);
             painelLateral.Controls.Add(btnCliente);
             painelLateral.Controls.Add(painelLogo);
             painelLateral.Dock = DockStyle.Left;
-            painelLateral.Location = new Point(0, 0);
-            painelLateral.Name = "painelLateral";
-            painelLateral.Size = new Size(220, 563);
-            painelLateral.TabIndex = 0;
-            // 
-            // btnFuncionarios
-            // 
-            btnFuncionarios.Dock = DockStyle.Top;
-            btnFuncionarios.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
-            btnFuncionarios.FlatStyle = FlatStyle.Flat;
-            btnFuncionarios.Location = new Point(0, 230);
-            btnFuncionarios.Name = "btnFuncionarios";
-            btnFuncionarios.Padding = new Padding(11, 0, 0, 0);
-            btnFuncionarios.Size = new Size(220, 50);
-            btnFuncionarios.TabIndex = 4;
-            btnFuncionarios.Text = "Funcionários";
-            btnFuncionarios.UseVisualStyleBackColor = true;
-            btnFuncionarios.Click += btnFuncionarios_Click;
-            // 
-            // btnOS
-            // 
-            btnOS.Dock = DockStyle.Top;
-            btnOS.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
-            btnOS.FlatStyle = FlatStyle.Flat;
-            btnOS.Location = new Point(0, 180);
-            btnOS.Name = "btnOS";
-            btnOS.Padding = new Padding(11, 0, 0, 0);
-            btnOS.Size = new Size(220, 50);
-            btnOS.TabIndex = 3;
-            btnOS.Text = "Ordem de Serviço";
-            btnOS.UseVisualStyleBackColor = true;
-            btnOS.Click += btnOS_Click;
-            // 
-            // btnVeiculos
-            // 
-            btnVeiculos.Dock = DockStyle.Top;
-            btnVeiculos.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
-            btnVeiculos.FlatStyle = FlatStyle.Flat;
-            btnVeiculos.Location = new Point(0, 130);
-            btnVeiculos.Name = "btnVeiculos";
-            btnVeiculos.Padding = new Padding(11, 0, 0, 0);
-            btnVeiculos.Size = new Size(220, 50);
-            btnVeiculos.TabIndex = 2;
-            btnVeiculos.Text = "Veículos";
-            btnVeiculos.UseVisualStyleBackColor = true;
-            btnVeiculos.Click += btnVeiculos_Click;
-            // 
-            // btnCliente
-            // 
-            btnCliente.Dock = DockStyle.Top;
-            btnCliente.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
-            btnCliente.FlatStyle = FlatStyle.Flat;
-            btnCliente.Location = new Point(0, 80);
-            btnCliente.Name = "btnCliente";
-            btnCliente.Padding = new Padding(11, 0, 0, 0);
-            btnCliente.Size = new Size(220, 50);
-            btnCliente.TabIndex = 1;
-            btnCliente.Text = "Clientes";
-            btnCliente.UseVisualStyleBackColor = true;
-            btnCliente.Click += btnCliente_Click;
+            painelLateral.Size = new Size(220, 600);
+
             // 
             // painelLogo
             // 
             painelLogo.BackColor = Color.FromArgb(64, 64, 64);
             painelLogo.Controls.Add(TituloLogo);
             painelLogo.Dock = DockStyle.Top;
-            painelLogo.Location = new Point(0, 0);
-            painelLogo.Name = "painelLogo";
             painelLogo.Size = new Size(220, 80);
-            painelLogo.TabIndex = 1;
+
             // 
             // TituloLogo
             // 
             TituloLogo.AutoSize = true;
-            TituloLogo.Font = new Font("Modern No. 20", 12F);
-            TituloLogo.ForeColor = SystemColors.ButtonHighlight;
-            TituloLogo.Location = new Point(56, 28);
-            TituloLogo.Name = "TituloLogo";
-            TituloLogo.Size = new Size(109, 25);
-            TituloLogo.TabIndex = 0;
+            TituloLogo.Font = new Font("Modern No. 20", 16F, FontStyle.Bold);
+            TituloLogo.ForeColor = Color.White;
+            TituloLogo.Location = new Point(50, 25);
             TituloLogo.Text = "Car WoW";
+
             // 
-            // fileSystemWatcher1
+            // btnCliente
             // 
-            fileSystemWatcher1.EnableRaisingEvents = true;
-            fileSystemWatcher1.SynchronizingObject = this;
+            btnCliente.Dock = DockStyle.Top;
+            btnCliente.FlatStyle = FlatStyle.Flat;
+            btnCliente.FlatAppearance.BorderSize = 0;
+            btnCliente.ForeColor = Color.White;
+            btnCliente.Padding = new Padding(11, 0, 0, 0);
+            btnCliente.Size = new Size(220, 50);
+            btnCliente.Text = "Clientes";
+            btnCliente.Click += btnCliente_Click;
+
+            // 
+            // btnVeiculos
+            // 
+            btnVeiculos.Dock = DockStyle.Top;
+            btnVeiculos.FlatStyle = FlatStyle.Flat;
+            btnVeiculos.FlatAppearance.BorderSize = 0;
+            btnVeiculos.ForeColor = Color.White;
+            btnVeiculos.Padding = new Padding(11, 0, 0, 0);
+            btnVeiculos.Size = new Size(220, 50);
+            btnVeiculos.Text = "Veículos";
+            btnVeiculos.Click += btnVeiculos_Click;
+
+            // 
+            // btnOS
+            // 
+            btnOS.Dock = DockStyle.Top;
+            btnOS.FlatStyle = FlatStyle.Flat;
+            btnOS.FlatAppearance.BorderSize = 0;
+            btnOS.ForeColor = Color.White;
+            btnOS.Padding = new Padding(11, 0, 0, 0);
+            btnOS.Size = new Size(220, 50);
+            btnOS.Text = "Ordem de Serviço";
+            btnOS.Click += btnOS_Click;
+
+            // 
+            // btnFuncionarios
+            // 
+            btnFuncionarios.Dock = DockStyle.Top;
+            btnFuncionarios.FlatStyle = FlatStyle.Flat;
+            btnFuncionarios.FlatAppearance.BorderSize = 0;
+            btnFuncionarios.ForeColor = Color.White;
+            btnFuncionarios.Padding = new Padding(11, 0, 0, 0);
+            btnFuncionarios.Size = new Size(220, 50);
+            btnFuncionarios.Text = "Funcionários";
+            btnFuncionarios.Click += btnFuncionarios_Click;
+
             // 
             // painelTopo
             // 
-            painelTopo.BackColor = SystemColors.ActiveCaption;
-            painelTopo.Controls.Add(CloseForm);
-            painelTopo.Controls.Add(labelTitulo);
+            painelTopo.BackColor = Color.FromArgb(0, 122, 204);
             painelTopo.Dock = DockStyle.Top;
-            painelTopo.Location = new Point(220, 0);
-            painelTopo.Name = "painelTopo";
-            painelTopo.Size = new Size(849, 80);
-            painelTopo.TabIndex = 1;
+            painelTopo.Size = new Size(900, 80);
+            painelTopo.Controls.Add(btnClose);
+            painelTopo.Controls.Add(btnMinimize);
+            painelTopo.Controls.Add(btnMaximize);
+            painelTopo.Controls.Add(labelTitulo);
+
             // 
-            // CloseForm
+            // btnClose
             // 
-            CloseForm.BackColor = Color.Transparent;
-            CloseForm.Font = new Font("Segoe UI", 12F);
-            CloseForm.ForeColor = Color.Black;
-            CloseForm.Location = new Point(7, 15);
-            CloseForm.Margin = new Padding(4, 5, 4, 5);
-            CloseForm.Name = "CloseForm";
-            CloseForm.Size = new Size(44, 50);
-            CloseForm.TabIndex = 1;
-            CloseForm.Text = "X";
-            CloseForm.UseVisualStyleBackColor = false;
-            CloseForm.Click += CloseForm_Click;
+            btnClose.Text = "X";
+            btnClose.Size = new Size(50, 30);
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.Click += CloseForm_Click;
+            btnClose.Location = new Point(850, 10);
+
+            // 
+            // btnMinimize
+            // 
+            btnMinimize.Text = "_";
+            btnMinimize.Size = new Size(50, 30);
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.Click += BtnMinimize_Click;
+            btnMinimize.Location = new Point(740, 10);
+
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Text = "▢";
+            btnMaximize.Size = new Size(50, 30);
+            btnMaximize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximize.FlatStyle = FlatStyle.Flat;
+            btnMaximize.FlatAppearance.BorderSize = 0;
+            btnMaximize.Click += BtnMaximize_Click;
+            btnMaximize.Location = new Point(795, 10);
+
             // 
             // labelTitulo
             // 
-            labelTitulo.Anchor = AnchorStyles.None;
-            labelTitulo.AutoSize = true;
-            labelTitulo.Font = new Font("Modern No. 20", 15F);
+            labelTitulo.Font = new Font("Modern No. 20", 18F, FontStyle.Bold);
             labelTitulo.ForeColor = Color.White;
-            labelTitulo.Location = new Point(384, 22);
-            labelTitulo.Margin = new Padding(4, 0, 4, 0);
-            labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(104, 31);
-            labelTitulo.TabIndex = 0;
+            labelTitulo.AutoSize = true;
+            labelTitulo.Location = new Point(400, 25);
             labelTitulo.Text = "HOME";
+
             // 
             // painelDesktop
             // 
             painelDesktop.Dock = DockStyle.Fill;
-            painelDesktop.Location = new Point(220, 80);
-            painelDesktop.Name = "painelDesktop";
-            painelDesktop.Size = new Size(849, 483);
-            painelDesktop.TabIndex = 2;
+
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1069, 563);
+            ClientSize = new Size(1120, 600);
             Controls.Add(painelDesktop);
             Controls.Add(painelTopo);
             Controls.Add(painelLateral);
+            FormBorderStyle = FormBorderStyle.Sizable;
+            MinimumSize = new Size(900, 500);
             Name = "Home";
-            Text = "Form1";
-            Load += Home_Load;
-            painelLateral.ResumeLayout(false);
-            painelLogo.ResumeLayout(false);
-            painelLogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
-            painelTopo.ResumeLayout(false);
-            painelTopo.PerformLayout();
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Home";
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel painelLateral;
-        private FileSystemWatcher fileSystemWatcher1;
-        private Button btnCliente;
         private Panel painelLogo;
-        private Button btnVerCliente;
-        private Button btnFuncionarios;
-        private Button btnOS;
-        private Button btnVeiculos;
-        private Panel painelTopo;
-        private Panel painelDesktop;
         private Label TituloLogo;
+        private Button btnCliente;
+        private Button btnVeiculos;
+        private Button btnOS;
+        private Button btnFuncionarios;
+        private Panel painelTopo;
         private Label labelTitulo;
-        private Button CloseForm;
+        private Panel painelDesktop;
+        private Button btnClose;
+        private Button btnMinimize;
+        private Button btnMaximize;
     }
 }
